@@ -1,0 +1,3 @@
+[submodule "Javescript-Project"]
+	path = Javescript-Project
+	url = git@github.com:Chrispolanco/Javescript-Project.git
