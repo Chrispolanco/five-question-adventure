@@ -5,3 +5,36 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Adventure.create([
+    adventure: 1, story: "First Story", questions_1: "Q1", questions_2: "Q2", questions_3: "Q3", questions_4: "Q4", questions_5: "Q5", answer_1: "A1",
+    answer_2: "A2", answer_3: "A3", answer_4: "A4", answer_5: "A5", background_image_questions_1_to_4: "backgroun 1-4", background_music_1_4: "background music 1-4", 
+    background_image_question_5: "backgroung 5", background_music_5: "background 5", background_image_won: "background won", background_music_won: "background music won", 
+    background_image_loss: "background loss", background_music_loss: "background music loss", background_image_incorrect: "background incorrect", 
+    background_music_incorrect: "background music incorrect", phrase_incorrect: "phrases incorrect", background_image_correct: "background correct", 
+    background_music_correct: "background music correct", phrase_correct: "phrase correct", won: false,  
+])
+
+
+    t.integer "user_id"
+    t.integer "hero_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "heros", force: :cascade do |t|
+    t.string "name"
+    t.string "class"
+    t.integer "age"
+    t.integer "health"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
