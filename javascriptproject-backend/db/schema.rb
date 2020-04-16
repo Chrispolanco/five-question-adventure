@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_04_09_070807) do
   enable_extension "plpgsql"
 
   create_table "adventures", force: :cascade do |t|
-    t.integer "adventure"
+    t.integer "adventure_number"
     t.text "story"
     t.string "questions_1"
     t.string "questions_2"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2020_04_09_070807) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "heros", force: :cascade do |t|
+  create_table "heroes", force: :cascade do |t|
     t.string "name"
     t.string "class"
     t.integer "age"

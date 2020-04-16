@@ -1,7 +1,7 @@
 class CreateAdventures < ActiveRecord::Migration[6.0]
   def change
     create_table :adventures do |t|
-      t.integer :adventure
+      t.integer :adventure_number
       t.text :story
       t.string :questions_1
       t.string :questions_2

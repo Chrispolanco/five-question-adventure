@@ -1,7 +1,7 @@
-class HerosController < ApplicationController
+class HeroesController < ApplicationController
     
     def index
-        @heros = Hero.all 
+        @heroes = Hero.all 
         render json: HeroSerializer.new(@heroes).to_serialized_json, status: 200
     end 
 
