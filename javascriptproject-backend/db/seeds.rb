@@ -12,29 +12,13 @@ Adventure.create([
     background_image_question_5: "backgroung 5", background_music_5: "background 5", background_image_won: "background won", background_music_won: "background music won", 
     background_image_loss: "background loss", background_music_loss: "background music loss", background_image_incorrect: "background incorrect", 
     background_music_incorrect: "background music incorrect", phrase_incorrect: "phrases incorrect", background_image_correct: "background correct", 
-    background_music_correct: "background music correct", phrase_correct: "phrase correct", won: false,  
+    background_music_correct: "background music correct", phrase_correct: "phrase correct", won: False, user_id: 1, hero_id:1
 ])
 
+Hero.create([
+  name: "here name", class: "class", age: 23, health: 3
+])
 
-    t.integer "user_id"
-    t.integer "hero_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "heros", force: :cascade do |t|
-    t.string "name"
-    t.string "class"
-    t.integer "age"
-    t.integer "health"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+User.create([
+  username: "Link - Username", password: "tree", :name: "name"
+])
