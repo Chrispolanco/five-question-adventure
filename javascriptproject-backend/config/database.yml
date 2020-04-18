@@ -92,3 +92,6 @@ production:
   database: javascriptproject_backend_production
   username: javascriptproject_backend
   password: <%= ENV['JAVASCRIPTPROJECT_BACKEND_DATABASE_PASSWORD'] %>
+
+
+#test
