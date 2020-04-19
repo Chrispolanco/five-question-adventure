@@ -7,12 +7,12 @@ class AdventuresController < ApplicationController
 
     def show 
         @adventure = Adventure.find(params[:id])
-        render json: AdventureSerializer.new(@adventure).to_serialized_json, status: 200 
+        #render json: AdventureSerializer.new(@adventure).to_serialized_json, status: 200 
     end 
 
     def create 
         @adventure = Adventure.create(adventure_params) 
-        render json: AdventureSerializer.new(@adventure).to_serialized_json, status: 200 
+        #render json: AdventureSerializer.new(@adventure).to_serialized_json, status: 200 
     end 
 
     def update 
@@ -26,7 +26,6 @@ class AdventuresController < ApplicationController
 
     def index 
         @adventures = Adventure.all 
-
     end 
 
     private 

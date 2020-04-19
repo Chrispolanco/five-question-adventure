@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_04_09_070807) do
 
   create_table "heros", force: :cascade do |t|
     t.string "name"
-    t.string "class"
+    t.string "character_class"
     t.integer "age"
     t.integer "health"
     t.datetime "created_at", precision: 6, null: false
