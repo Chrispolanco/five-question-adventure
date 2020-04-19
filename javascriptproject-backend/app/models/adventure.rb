@@ -1,4 +1,3 @@
 class Adventure < ApplicationRecord
-    belongs_to :user
-    belongs_to :adventure
+    belongs_to :hero
 end

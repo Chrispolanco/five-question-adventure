@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 2020_04_09_070807) do
     t.string "background_music_correct"
     t.string "phrase_correct"
     t.boolean "won"
-    t.integer "user_id"
     t.integer "hero_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
