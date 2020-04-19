@@ -13,13 +13,9 @@ Adventure.create([
     background_image_loss: "background loss", background_music_loss: "background music loss", background_image_incorrect: "background incorrect", 
     background_music_incorrect: "background music incorrect", phrase_incorrect: "phrases incorrect", background_image_correct: "background correct", 
     background_music_correct: "background music correct", phrase_correct: "phrase correct", won: "FALSE"}
-])
+]); 
 
-Hero.create([
- {name: "hero name", class: "class", age: 23, health: 3}
-])
-
-User.create([
-  {username: "Link - Username", name: "name"}
-])
+#User.create([
+#  {username: "Link - Username", name: "name"}
+#]); 
 
