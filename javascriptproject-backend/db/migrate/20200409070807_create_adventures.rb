@@ -28,7 +28,7 @@ class CreateAdventures < ActiveRecord::Migration[6.0]
       t.string :background_music_correct
       t.string :phrase_correct
       t.boolean :won
-      t.integer :hero_id
+      t.belongs_to :hero, null: false, foreign_key: true
 
       t.timestamps
     end

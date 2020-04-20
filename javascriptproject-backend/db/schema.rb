@@ -43,9 +43,10 @@ ActiveRecord::Schema.define(version: 2020_04_09_070807) do
     t.string "background_music_correct"
     t.string "phrase_correct"
     t.boolean "won"
-    t.integer "hero_id"
+    t.bigint "hero_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["hero_id"], name: "index_adventures_on_hero_id"
   end
 
   create_table "heros", force: :cascade do |t|
@@ -65,4 +66,5 @@ ActiveRecord::Schema.define(version: 2020_04_09_070807) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "adventures", "heros"
 end
