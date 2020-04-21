@@ -26,6 +26,7 @@ class AdventuresController < ApplicationController
 
     def index 
         @adventures = Adventure.all 
+        render json: AdventureSerializer.new(@adventures).to_serialized_json, status: 200
     end 
 
     private 
