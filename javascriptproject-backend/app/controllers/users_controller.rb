@@ -12,16 +12,25 @@ class UsersController < ApplicationController
 
     def create 
         @user = User.create(user_params) 
-        render json: UserSerializer.new(@user).to_serialized_json, status: 200 
+        if @user && @user.save 
+            session[:user_id] = @user.id 
+            render json: UserSerializer.new(@user).to_serialized_json, status: 200 
+        else 
+            render json: { status: 400}
+        end 
     end 
 
     def update 
         @user = User.find(params[:id])
         if @user.update(user_params) 
-            render json: UserSerializer.new(@user).to_serialized_json, status: 200
+        render json: UserSerializer.new(@user).to_serialized_json, status: 200
         else 
-            render json: {status: 500}
+            render json: {status: 400}
         end 
+    end 
+
+    def destroy 
+        User.find(params[:id]).destroy
     end 
 
     private 
