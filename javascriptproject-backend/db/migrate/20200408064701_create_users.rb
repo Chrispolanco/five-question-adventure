@@ -4,6 +4,10 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :username
       t.string :password_digest
       t.string :name
+      t.boolean :won_adventure_1, default: false
+      t.boolean :won_adventure_2, default: false
+      t.boolean :won_adventure_3, default: false
+      t.boolean :won_adventure_4, default: false
 
       t.timestamps
     end

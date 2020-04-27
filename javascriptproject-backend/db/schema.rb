@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2020_04_09_070807) do
     t.string "background_image_correct"
     t.string "background_music_correct"
     t.string "phrase_correct"
-    t.boolean "won"
     t.bigint "hero_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -62,6 +61,10 @@ ActiveRecord::Schema.define(version: 2020_04_09_070807) do
     t.string "username"
     t.string "password_digest"
     t.string "name"
+    t.boolean "won_adventure_1", default: false
+    t.boolean "won_adventure_2", default: false
+    t.boolean "won_adventure_3", default: false
+    t.boolean "won_adventure_4", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
