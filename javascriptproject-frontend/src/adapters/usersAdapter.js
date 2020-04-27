@@ -26,5 +26,18 @@ class UsersAdapter {
             .then(resp = resp.json())
     }
 
+    showInfo(userId) {
+        let configObj = {
+            method: "GET", 
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
+        }
+        return fetch(this.baseUrl + `/$userId`, configObj)
+            .then(resp => resp.json())
+    }
+    
+
 }
 
