@@ -8,3 +8,4 @@ class HerosAdapter{
         return fetch(this.baseURL).then(resp = resp.json())
     }
 }
+
