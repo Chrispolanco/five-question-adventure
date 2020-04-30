@@ -1,0 +1,22 @@
+    body {
+    background-image: url('../images/Test 2.PNG');
+    background-repeat: repeat;
+
+    background-color: rgb(88, 18, 116);
+    color: rgb(236, 231, 231);
+    font-family: Sans-Serif;
+    line-height: 40px;
+  }
+
+  /* :root{
+    --red-hue: 360;
+    --blue-hue: 240;
+    --green-hue: 120;
+    --main-hue : var(--red-hue);
+  } */
+  
+  /* .container{
+    flex: 1;
+    background:hsl(var(--main-hue), 100%, 75%);
+    padding: 4rem;
+  } */
