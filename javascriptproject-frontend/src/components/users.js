@@ -31,11 +31,11 @@ class Users {
         
         redBtn.addEventListener('click',(e)=>{
        
-          document.documentElement.style.setProperty("background-image", " url('../images/Test Picture.PNG')");
+          document.body.style.backgroundImage =  "url('./images/2.jpg')";
        })
         
       blueBtn.addEventListener('click',(e)=>{
-          document.documentElement.style.setProperty('--main-hue', 240);
+          document.body.style.setProperty('background-image', "url('images/2.jpg')");
         })
         
         greenBtn.addEventListener('click',(e)=>{
@@ -49,4 +49,12 @@ class Users {
 
 }
 
+
+
+
+
+
+
+
+       
 
