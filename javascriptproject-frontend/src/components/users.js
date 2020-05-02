@@ -43,9 +43,6 @@ class Users {
         })  
       }
 
-      changeImage() {
-          
-      }
 
 }
 
