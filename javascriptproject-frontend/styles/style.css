@@ -10,16 +10,27 @@
     line-height: 100px;
   }
 
-  #MainHeader{
+  #header{
+    float: none;
     background-color: rgb(0, 0, 0);
-    float: None; 
     display: block;
-    color: white;
+    color: rgb(195, 0, 0);
     text-align: center;
-    padding: 5px;
+    padding: 0px;
     text-decoration: none;
     font-size: 60px;
+    text-align: center;
   }
+
+  #header:hover {
+    background-image: url('../images/Sprites/Attack (1).png'), url('../images/Sprites/Walk (2).png');
+    color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: 0px 0px, 80px 0px;
+
+  }
+
 
   ul {
     list-style-type: none;
