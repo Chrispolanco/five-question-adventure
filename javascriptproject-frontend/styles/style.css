@@ -12,23 +12,24 @@
 
   #header{
     float: none;
-    background-color: rgb(0, 0, 0);
-    display: block;
-    color: rgb(195, 0, 0);
-    text-align: center;
-    padding: 0px;
-    text-decoration: none;
-    font-size: 60px;
-    text-align: center;
+    background: transparent; 
+    color: #d54d7b; 
+    font-size: 120px;
+    font-family: 'Rouge Script', cursive; 
+    font-weight: normal; 
+    margin-bottom: 0px; 
+    margin-top: 20px; 
+    text-align: center; 
+    text-shadow: 0 1px 1px #fff;
   }
 
   #header:hover {
-    background-image: url('../images/Sprites/Attack (1).png'), url('../images/Sprites/Walk (2).png');
+    background-image: url('../images/Sprites/Run (1).png'), url('../images/Sprites/Run (2).png'), url('../images/Sprites/Run (3).png'), url('../images/Sprites/Run (4).png'), url('../images/Sprites/Run (5).png'), url('../images/Sprites/Run (6).png'), url('../images/Sprites/Run (7).png'), url('../images/Sprites/Run (8).png'), url('../images/Sprites/Run (9).png'), url('../images/Sprites/Run (10).png'), url('../images/Sprites/JumpAttack (1).png'), url('../images/Sprites/JumpAttack (2).png'), url('../images/Sprites/JumpAttack (3).png'), url('../images/Sprites/JumpAttack (4).png'), url('../images/Sprites/JumpAttack (5).png'),url('../images/Sprites/JumpAttack (6).png'), url('../images/Sprites/JumpAttack (7).png'), url('../images/Sprites/JumpAttack (8).png'),url('../images/Sprites/JumpAttack (9).png'), url('../images/Sprites/JumpAttack (10).png') ;
     color: transparent;
     background-repeat: no-repeat;
     background-size: 100px;
-    background-position: 0px 0px, 80px 0px;
-
+    background-position: 0px 0px, 80px 0px, 160px 0px, 240px 0px, 320px 0px, 400px 0px, 480px 0px, 560px 0px, 640px 0px, 720px 0px, 800px 0px, 880px 0px, 960px 0px, 1040px 0px, 1120px 0px, 1200px 0px, 1280px 0px, 1360px 0px, 1440px 0px, 1530px 0px;
+    text-shadow: none;
   }
 
 
@@ -37,7 +38,7 @@
     margin: 0; 
     padding: 0;
     overflow: hidden;
-    background-color: rgb(0, 0, 0);
+    background-color:transparent;
   }
 
   li {
