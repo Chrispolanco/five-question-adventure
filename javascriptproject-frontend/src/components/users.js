@@ -2,22 +2,15 @@ class Users {
     constructor() {
         this.users = []
         this.adapter = new UsersAdapter()
-        this.initBindingsAndEventListeners
+        this.startMusic()
         this.renderUsers()
         this.changebg()
         this.changemusic()
     }
 
-
-    retrieveAndLoadUsers() {
-        this.adapter 
-        .getUsers()
-        .then(users => {
-            users.forEach(user = this.users.push (new UsersAdapter(user)))
-        })
-        .then(()=> {
-            this.renderUsers()
-        })
+    startMusic() {
+        const audio = document.getElementById('audio');
+        audio.play(); 
     }
 
     renderUsers() {
@@ -36,11 +29,12 @@ class Users {
         const blueBtn = document.querySelector('#toggle-blue');
         blueBtn.addEventListener('click',(e)=>{
             e.preventDefault();
-            let audio = document.getElementById('audio');
-            let audiosource = document.getElementById('audiosource'); 
+            const audio = document.getElementById('audio');
+            const audiosource = document.getElementById('audiosource'); 
             audiosource.src = "./music/01 - Fantastic Journey.mp3"; 
             audio.pause(); 
             audio.load(); 
+            audio.play(); 
         })  
     } 
 
