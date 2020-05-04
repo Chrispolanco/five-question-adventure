@@ -2,11 +2,12 @@ class Users {
     constructor() {
         this.users = []
         this.adapter = new UsersAdapter()
+        this.initBindingsAndEventListeners
         this.renderUsers()
         this.changebg()
-        this.changeImage
-
+        this.changemusic()
     }
+
 
     retrieveAndLoadUsers() {
         this.adapter 
@@ -20,28 +21,28 @@ class Users {
     }
 
     renderUsers() {
-        const change = document.querySelectorAll('h4')[0].innerText = "Hello 2000"
+        document.querySelectorAll('h4')[0].innerText = "Hello 2000"
     }
 
     changebg() {
-
-        const redBtn = document.querySelector('#toggle-red');
-        const blueBtn = document.querySelector('#toggle-blue');
-        const greenBtn = document.querySelector('#toggle-green');
-        
+        const redBtn = document.querySelector('#toggle-red');   
         redBtn.addEventListener('click',(e)=>{
-       
+            e.preventDefault();
           document.body.style.backgroundImage =  "url('./images/2.jpg')";
        })
-        
-      blueBtn.addEventListener('click',(e)=>{
-          document.body.style.setProperty('background-image', "url('images/2.jpg')");
-        })
-        
-        greenBtn.addEventListener('click',(e)=>{
-          document.documentElement.style.setProperty('--main-hue', 120);
+    }
+
+    changemusic() { 
+        const blueBtn = document.querySelector('#toggle-blue');
+        blueBtn.addEventListener('click',(e)=>{
+            e.preventDefault();
+            let audio = document.getElementById('audio');
+            let audiosource = document.getElementById('audiosource'); 
+            audiosource.src = "./music/01 - Fantastic Journey.mp3"; 
+            audio.pause(); 
+            audio.load(); 
         })  
-      }
+    } 
 
 
 }

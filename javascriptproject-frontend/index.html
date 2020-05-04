@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  
-  <audio autoplay loop>
-    <source src="./music/01 - Fantastic Journey.mp3" type="audio/mp3">
-  Your browser does not support the audio element.
-  </audio>
 
   <head>
     <meta charset="utf-8">
@@ -26,11 +21,13 @@
 
   <h4> Inner text</h4>
 
-  <input type="button" value="Red" id="toggle-red" />
-  <input type="button" value="Blue" id="toggle-blue" />  
-  <input type="button" value="Green" id="toggle-green" />  
+  <input type="button" value="Change Background" id="toggle-red" />
+  <input type="button" value="Change Music" id="toggle-blue" /> 
 
-
+  <audio id="audio" autoplay controls>
+    <source id="audiosource" src="./music/02 - Parabolic Geometry.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+  </audio>
 
 
 <!--- Javascript -->
@@ -41,6 +38,4 @@
 
   </body>
 </html>
-
-<sup> Text </sup>  <sub> Text </sub>
 
