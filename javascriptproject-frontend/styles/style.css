@@ -13,6 +13,7 @@
     font-family: 'Rouge Script', cursive; 
     font-weight: normal; 
     margin-top: 0px; 
+    margin-bottom: 0px;
     text-align: left; 
     text-shadow: 0 1px 1px #fff;
     overflow: visible;
@@ -51,10 +52,12 @@
   }
 
   .box {
-    width: 1500px;
-    height: 450px;
-    border: 10px solid green;
-    margin-left: 150px;
+    width: 1200px;
+    height: 500px;
+    border: 20px solid green;
+    margin-left: 315px;
+    margin-top: 0px;
+    padding: 0px;
   }
 
 
@@ -65,4 +68,5 @@
     background-color:transparent;
     color: white;
     text-align: center;
+    font-size: 10px;
   }
