@@ -2,50 +2,43 @@
 <html lang="en" dir="ltr">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="styles/style.css">    <title> 5-Question Adventure </title>
-
-
-
-<!-- Navbar  -->
-<div class="navbar">
-  <!-- <h1 id="header"> Mini Question Adventure</h1> -->
-  <div class="links">
-    <ul>
-      <li> Log In</li>
-      <li> Log In</li>
-      <li> Log In</li>
-    </ul>
+<link rel="stylesheet" type="text/css" href="styles/style.css">   
+<title> Mini Question Adventure </title>
+  <body> 
+  <!-- Navbar  -->
+  <div class="top">
+    <nav>
+        <ul>
+          <li> Log In</li>
+          <li> Log Out</li>
+          <li> Account</li>
+        </ul>
+      </div>
+    </nav> 
+    <h1 id="header"> Mini Question Adventure</h1>
   </div>
-</div>
-  <body>  
-      <!-- <ul> 
-        <li> Log In </li>
-        <li> Log Out </li>
-        <li> Account </li>
-        <li id=header> Mini Question Adventure </li>
-      </ul> -->
-  
-    <div class= "container">
 
-    </div>
+  <div class="footer">  
+    <input type="button" value="Change Background" id="toggle-red" />
+    <input type="button" value="Change Music" id="toggle-blue" /> 
+  </div>
 
-  <h4> Inner text</h4>
-
-  <input type="button" value="Change Background" id="toggle-red" />
-  <input type="button" value="Change Music" id="toggle-blue" /> 
+  <div class="box">
+    <p> test </p>
+  </div>
 
   <audio id="audio" autoplay >
     <source id="audiosource" src="./music/02 - Parabolic Geometry.mp3" type="audio/mp3">
-  Your browser does not support the audio element.
+    Your browser does not support the audio element.
   </audio>
 
-
-<!--- Javascript -->
-<script src="./src/components/app.js" ></script>
-<script src="./src/components/users.js" ></script>
-<script src="./src/adapters/UsersAdapter.js" ></script>
-<script src="./src/index.js"></script>
+  <!--- Javascript -->
+  <script src="./src/components/app.js" ></script>
+  <script src="./src/components/users.js" ></script>
+  <script src="./src/adapters/UsersAdapter.js" ></script>
+  <script src="./src/index.js"></script>
 
   </body>
+
 </html>
 

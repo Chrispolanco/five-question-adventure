@@ -3,7 +3,7 @@ class Users {
         this.users = []
         this.adapter = new UsersAdapter()
         this.startMusic()
-        this.renderUsers()
+
         this.changebg()
         this.changemusic()
     }
