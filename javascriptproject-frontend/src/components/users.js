@@ -44,6 +44,10 @@ class Users {
             topInnerText.classList.remove("topInnerText")
             topInnerText.classList.add("topInnerTextBlock") 
         }, 2000); 
+        setTimeout(function() {
+            topInnerText.classList.add("topInnerText")
+            topInnerText.classList.remove("topInnerTextBlock") 
+        }, 10000); 
     }
 
 
