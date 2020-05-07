@@ -3,7 +3,7 @@ class Users {
         this.users = []
         this.adapter = new UsersAdapter()
         this.startMusic()
-
+        this.welcomeDelay()
         this.changebg()
         this.changemusic()
     }
@@ -37,6 +37,14 @@ class Users {
             audio.play(); 
         })  
     } 
+
+    welcomeDelay() {
+        const topInnerText = document.querySelector(".topInnerText");
+        setTimeout(function() {
+            topInnerText.classList.remove("topInnerText")
+            topInnerText.classList.add("topInnerTextBlock") 
+        }, 2000); 
+    }
 
 
 }
