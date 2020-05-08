@@ -3,9 +3,9 @@ class Users {
         this.users = []
         this.adapter = new UsersAdapter()
         this.startMusic()
-        this.welcomeDelay()
         this.changebg()
         this.changemusic()
+        this.welcomeMessage()
     }
 
     startMusic() {
@@ -38,17 +38,20 @@ class Users {
         })  
     } 
 
-    welcomeDelay() {
+    welcomeMessage() {
         const topInnerText = document.querySelector(".topInnerText");
-        setTimeout(function() {
-            topInnerText.classList.remove("topInnerText")
-            topInnerText.classList.add("topInnerTextBlock") 
-        }, 2000); 
-        setTimeout(function() {
-            topInnerText.classList.add("topInnerText")
-            topInnerText.classList.remove("topInnerTextBlock") 
-        }, 10000); 
+        topInnerText.classList.add("welcome") 
+        topInnerText.classList.add("welcome:hover") 
+        topInnerText.innerText = "Welcome traveler your journey awaits"
+        topInnerText.classList.remove("topInnerText")
+
+        topInnerText.classList.remove("welcome") 
+        topInnerText.classList.remove("welcome:hover") 
+        topInnerText.innerText = " "
+        topInnerText.classList.add("topInnerText")
+
     }
+ 
 
 
 }
@@ -62,3 +65,9 @@ class Users {
 
        
 
+/*setTimeout(function() {
+    topInnerText.classList.add("welcome") 
+    topInnerText.classList.add("welcome:hover") 
+    topInnerText.classList.remove("topInnerText")
+}, 1); 
+*/ 
