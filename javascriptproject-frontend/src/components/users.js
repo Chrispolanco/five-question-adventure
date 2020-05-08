@@ -51,14 +51,34 @@ class Users {
         const topInnerText = document.querySelector(".welcome");
 
         setTimeout(function() {
-            topInnerText.classList.remove("welcome") 
-            topInnerText.classList.remove("welcome:hover") 
-            topInnerText.classList.add("topInnerText")
-            topInnerText.innerText = " Hello "
-            const middleInnerText = document.createElement('div')
-            middleInnerText.className = "middleInnerText" 
-            middleInnerText.innerText = "New Text"
-            topInnerText.appendChild(middleInnerText)
+            topInnerText.classList.remove("welcome"); 
+            topInnerText.classList.remove("welcome:hover"); 
+            topInnerText.classList.add("topInnerText");
+            topInnerText.innerText = " Hello "; 
+
+            const middleInnerText = document.createElement('div'); 
+            middleInnerText.className = "middleInnerText"; 
+            const firstChoice = document.createElement('li'); 
+            firstChoice.className = "choices"; 
+            firstChoice.innerText = "first"; 
+            const secondChoice = document.createElement('li'); 
+            secondChoice.className = "choices"; 
+            secondChoice.innerText = "second";
+            const thirdChoice = document.createElement('li'); 
+            thirdChoice.className = "choices";
+            thirdChoice.innerText = "third";  
+            const fourthChoice = document.createElement('li'); 
+            fourthChoice.className = "choices";
+            fourthChoice.innerText = "fourth" 
+              
+            middleInnerText.innerText = "You have the a choice for your type of tranportation what is your choice"; 
+            topInnerText.appendChild(middleInnerText); 
+
+            middleInnerText.appendChild(firstChoice); 
+            middleInnerText.appendChild(secondChoice); 
+            middleInnerText.appendChild(thirdChoice); 
+            middleInnerText.appendChild(fourthChoice); 
+
         }, 1); 
 
     }
