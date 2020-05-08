@@ -5,6 +5,7 @@ class Users {
         this.startMusic()
         this.changebg()
         this.changemusic()
+        this.welcome()
         this.welcomeMessage()
     }
 
@@ -38,20 +39,30 @@ class Users {
         })  
     } 
 
-    welcomeMessage() {
+    welcome() {
         const topInnerText = document.querySelector(".topInnerText");
         topInnerText.classList.add("welcome") 
         topInnerText.classList.add("welcome:hover") 
         topInnerText.innerText = "Welcome traveler your journey awaits"
         topInnerText.classList.remove("topInnerText")
-
-        topInnerText.classList.remove("welcome") 
-        topInnerText.classList.remove("welcome:hover") 
-        topInnerText.innerText = " "
-        topInnerText.classList.add("topInnerText")
-
     }
  
+    welcomeMessage() {
+        const topInnerText = document.querySelector(".welcome");
+
+        setTimeout(function() {
+            topInnerText.classList.remove("welcome") 
+            topInnerText.classList.remove("welcome:hover") 
+            topInnerText.classList.add("topInnerText")
+            topInnerText.innerText = " Hello "
+            const middleInnerText = document.createElement('div')
+            middleInnerText.className = "middleInnerText" 
+            middleInnerText.innerText = "New Text"
+            topInnerText.appendChild(middleInnerText)
+        }, 1); 
+
+    }
+
 
 
 }
@@ -64,10 +75,3 @@ class Users {
 
 
        
-
-/*setTimeout(function() {
-    topInnerText.classList.add("welcome") 
-    topInnerText.classList.add("welcome:hover") 
-    topInnerText.classList.remove("topInnerText")
-}, 1); 
-*/ 
