@@ -115,8 +115,24 @@
     font-size: 40px;
   }
 
-  .choices {
-    font-size: 40px;
+
+  .buttons {
+    display: block;
+    font-size: 20px;
+    line-height: 2.5;
+    background-color: lightseagreen;
+    text-align: center;
+    margin: auto; 
+    color: black;
+    border: 2px solid #555555;
+    width: 800px;
+    overflow: hidden;
+    opacity: .75;
+    border-radius: 8px;
+  }
+
+  .buttons:hover {
+    opacity: 1;
   }
 
   .footer {

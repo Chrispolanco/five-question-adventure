@@ -58,17 +58,17 @@ class Users {
 
             const middleInnerText = document.createElement('div'); 
             middleInnerText.className = "middleInnerText"; 
-            const firstChoice = document.createElement('li'); 
-            firstChoice.className = "choices"; 
-            firstChoice.innerText = "first"; 
-            const secondChoice = document.createElement('li'); 
-            secondChoice.className = "choices"; 
+            const firstChoice = document.createElement('Button'); 
+            firstChoice.className = "buttons"; 
+            firstChoice.innerText = "First"; 
+            const secondChoice = document.createElement('Button'); 
+            secondChoice.className = "buttons"; 
             secondChoice.innerText = "second";
-            const thirdChoice = document.createElement('li'); 
-            thirdChoice.className = "choices";
+            const thirdChoice = document.createElement('Button'); 
+            thirdChoice.className = "buttons";
             thirdChoice.innerText = "third";  
-            const fourthChoice = document.createElement('li'); 
-            fourthChoice.className = "choices";
+            const fourthChoice = document.createElement('Button'); 
+            fourthChoice.className = "buttons";
             fourthChoice.innerText = "fourth" 
               
             middleInnerText.innerText = "You have the a choice for your type of tranportation what is your choice"; 
