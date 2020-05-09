@@ -54,10 +54,17 @@ class Users {
             topInnerText.classList.remove("welcome"); 
             topInnerText.classList.remove("welcome:hover"); 
             topInnerText.classList.add("topInnerText");
-            topInnerText.innerText = " Hello "; 
+            topInnerText.innerText = " "; 
 
-            const middleInnerText = document.createElement('div'); 
-            middleInnerText.className = "middleInnerText"; 
+            const questions = document.createElement('div'); 
+            questions.className = "questions"; 
+            questions.innerText = "You have the a choice for your type of tranportation what is your choice"; 
+            topInnerText.appendChild(questions); 
+
+            const wrapper_questions = document.createElement('div');
+            wrapper_questions.className = "wrapper_questions"; 
+            questions.appendChild(wrapper_questions); 
+
             const firstChoice = document.createElement('Button'); 
             firstChoice.className = "buttons"; 
             firstChoice.innerText = "First"; 
@@ -70,14 +77,11 @@ class Users {
             const fourthChoice = document.createElement('Button'); 
             fourthChoice.className = "buttons";
             fourthChoice.innerText = "fourth" 
-              
-            middleInnerText.innerText = "You have the a choice for your type of tranportation what is your choice"; 
-            topInnerText.appendChild(middleInnerText); 
 
-            middleInnerText.appendChild(firstChoice); 
-            middleInnerText.appendChild(secondChoice); 
-            middleInnerText.appendChild(thirdChoice); 
-            middleInnerText.appendChild(fourthChoice); 
+            wrapper_questions.appendChild(firstChoice); 
+            wrapper_questions.appendChild(secondChoice); 
+            wrapper_questions.appendChild(thirdChoice); 
+            wrapper_questions.appendChild(fourthChoice); 
 
         }, 1); 
 

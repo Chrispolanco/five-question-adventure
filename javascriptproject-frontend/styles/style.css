@@ -108,11 +108,17 @@
   }
 
 
-  .middleInnerText {
+  .questions {
     text-align: center; 
     font-family: 'Rouge Script', cursive; 
-    color: black;
+    color: white;
     font-size: 40px;
+    padding-top: 40px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+
+  .wrapper_questions{
+    padding-top: 60px;
   }
 
 
