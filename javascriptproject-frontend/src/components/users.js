@@ -7,6 +7,7 @@ class Users {
         this.changemusic()
         this.welcome()
         this.startScreen()
+        this.fetchAndLoadUsers() 
     }
 
     startMusic() {
@@ -66,10 +67,19 @@ class Users {
 
             menu_wrapper.appendChild(menu_choice_one);
             menu_wrapper.appendChild(menu_choice_two); 
-
         }, 3000); 
-
     }
+
+    fetchAndLoadUsers() {
+        this.adapter
+        .getUsers()
+        .then(users => {
+            users.forEach(user => this.users.push(new User(user)))
+        })
+        .then(() => {
+            this.renderUsers()
+        })
+    }; 
 
     first_question() {
         const questions = document.createElement('div'); 
