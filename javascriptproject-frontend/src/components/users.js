@@ -6,16 +6,12 @@ class Users {
         this.changebg()
         this.changemusic()
         this.welcome()
-        this.welcomeMessage()
+        this.startScreen()
     }
 
     startMusic() {
         const audio = document.getElementById('audio');
         audio.play(); 
-    }
-
-    renderUsers() {
-        document.querySelectorAll('h4')[0].innerText = "Hello 2000"
     }
 
     changebg() {
@@ -47,43 +43,61 @@ class Users {
         topInnerText.classList.remove("topInnerText")
     }
  
-    welcomeMessage() {
+    startScreen() {
         const topInnerText = document.querySelector(".welcome");
 
         setTimeout(function() {
             topInnerText.classList.remove("welcome"); 
             topInnerText.classList.remove("welcome:hover"); 
-            topInnerText.classList.add("topInnerText");
-            topInnerText.innerText = " "; 
+            topInnerText.classList.add("startScreen");
+            topInnerText.innerText = "Is this your first adventure?"; 
 
-            const questions = document.createElement('div'); 
-            questions.className = "questions"; 
-            questions.innerText = "You have the a choice for your type of tranportation what is your choice"; 
-            topInnerText.appendChild(questions); 
+            const menu_wrapper = document.createElement('div'); 
+            menu_wrapper.className = "menu_wrapper"
+            topInnerText.appendChild(menu_wrapper); 
 
-            const wrapper_questions = document.createElement('div');
-            wrapper_questions.className = "wrapper_questions"; 
-            questions.appendChild(wrapper_questions); 
+            const menu_choice_one = document.createElement('Button'); 
+            menu_choice_one.className = "menu_choice";
+            menu_choice_one.innerText = "New Adventure"; 
 
-            const firstChoice = document.createElement('Button'); 
-            firstChoice.className = "buttons"; 
-            firstChoice.innerText = "First"; 
-            const secondChoice = document.createElement('Button'); 
-            secondChoice.className = "buttons"; 
-            secondChoice.innerText = "second";
-            const thirdChoice = document.createElement('Button'); 
-            thirdChoice.className = "buttons";
-            thirdChoice.innerText = "third";  
-            const fourthChoice = document.createElement('Button'); 
-            fourthChoice.className = "buttons";
-            fourthChoice.innerText = "fourth" 
+            const menu_choice_two = document.createElement('Button'); 
+            menu_choice_two.className = "menu_choice";
+            menu_choice_two.innerText = "Log In"; 
 
-            wrapper_questions.appendChild(firstChoice); 
-            wrapper_questions.appendChild(secondChoice); 
-            wrapper_questions.appendChild(thirdChoice); 
-            wrapper_questions.appendChild(fourthChoice); 
+            menu_wrapper.appendChild(menu_choice_one);
+            menu_wrapper.appendChild(menu_choice_two); 
 
-        }, 1); 
+        }, 3000); 
+
+    }
+
+    first_question() {
+        const questions = document.createElement('div'); 
+        questions.className = "questions"; 
+        questions.innerText = "You have the a choice for your type of tranportation what is your choice"; 
+        startScreen.appendChild(questions); 
+
+        const wrapper_questions = document.createElement('div');
+        wrapper_questions.className = "wrapper_questions"; 
+        questions.appendChild(wrapper_questions); 
+
+        const firstChoice = document.createElement('Button'); 
+        firstChoice.className = "buttons"; 
+        firstChoice.innerText = "First"; 
+        const secondChoice = document.createElement('Button'); 
+        secondChoice.className = "buttons"; 
+        secondChoice.innerText = "second";
+        const thirdChoice = document.createElement('Button'); 
+        thirdChoice.className = "buttons";
+        thirdChoice.innerText = "third";  
+        const fourthChoice = document.createElement('Button'); 
+        fourthChoice.className = "buttons";
+        fourthChoice.innerText = "fourth" 
+
+        wrapper_questions.appendChild(firstChoice); 
+        wrapper_questions.appendChild(secondChoice); 
+        wrapper_questions.appendChild(thirdChoice); 
+        wrapper_questions.appendChild(fourthChoice); 
 
     }
 

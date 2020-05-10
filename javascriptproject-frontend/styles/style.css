@@ -79,10 +79,6 @@
     background-attachment: scroll; 
   }
 
-  .topInnerText {
-    font-size: 60px;
-  }
-
   .welcome {
     display: block;
     text-align: center; 
@@ -107,6 +103,47 @@
     opacity: 1;
   }
 
+  .startScreen {
+    text-align: center; 
+    font-family: 'Rouge Script', cursive; 
+    color: white;
+    font-size: 40px;
+    padding-top: 40px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  } 
+
+  .menu_wrapper {
+    padding: 40px; 
+    Background-Image: url('../images/Sprites_2/4.png'), url('../images/Sprites_2/5.png'), url('../images/Sprites_2/6.png'), url('../images/Sprites_2/1.png'), url('../images/Sprites_2/2.png'), url('../images/Sprites_2/3.png'); 
+    background-position: 80px 0px, 200px 0px, 300px 0px, 700px 0px, 800px 0px, 900px 0px; 
+    background-repeat: no-repeat;
+    background-size: 280px, 280px, 280px, 135px, 135px, 135px; 
+  }
+
+  .menu_choice {
+    display: block;
+    font-size: 20px;
+    line-height: 2.5;
+    background-color: lightseagreen;
+    text-align: center;
+    margin: auto; 
+    color: black;
+    border: 2px solid #555555;
+    width: 800px;
+    overflow: hidden;
+    opacity: .65;
+    border-radius: 8px;
+    margin-top: 65px;
+  }
+
+  .menu_choice:hover {
+    opacity: 1;
+    font-weight: bold;
+  }
+
+  .wrapper_questions{
+    padding-top: 60px;
+  }
 
   .questions {
     text-align: center; 
@@ -116,11 +153,6 @@
     padding-top: 40px;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
-
-  .wrapper_questions{
-    padding-top: 60px;
-  }
-
 
   .buttons {
     display: block;
