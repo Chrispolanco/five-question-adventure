@@ -26,7 +26,7 @@ class UsersAdapter {
             .then(resp = resp.json())
     }
 
-    showInfo(userId) {
+    showInfo(id) {
         let configObj = {
             method: "GET", 
             headers: {
@@ -34,7 +34,7 @@ class UsersAdapter {
                 "Accept": "application/json"
             }
         }
-        return fetch(this.baseUrl + `/$userId`, configObj)
+        return fetch(this.baseUrl + `/$id`, configObj)
             .then(resp => resp.json())
     }
     
