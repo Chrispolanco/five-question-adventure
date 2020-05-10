@@ -5,9 +5,9 @@ class Users {
         this.startMusic()
         this.changebg()
         this.changemusic()
-        this.welcome()
+/*        this.welcome()
         this.startScreen()
-        this.fetchAndLoadUsers() 
+*/        this.fetchAndLoadUsers() 
     }
 
     startMusic() {
@@ -80,6 +80,23 @@ class Users {
             this.renderUsers()
         })
     }; 
+
+    renderUsers() {
+        this.users.forEach(user => {
+            const divCard = document.createElement('div')
+            divCard.className = "user-card"
+
+            divCard.username = `${user.username}`
+            divCard.password_digest = `${user.password_digest}`
+            divCard.name = `${user.name}`
+            divCard.won_adventure_1 = `${user.won_adventure_1}`
+            divCard.won_adventure_2 = `${user.won_adventure_2}`
+            divCard.won_adventure_3 = `${user.won_adventure_3}`
+            divCard.won_adventure_4 = `${user.won_adventure_4}`
+
+            topInnerText.appendChild(divCard);
+        })
+    }
 
     first_question() {
         const questions = document.createElement('div'); 
