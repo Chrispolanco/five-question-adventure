@@ -1,6 +1,5 @@
 class User {
     constructor(userJSON) {
-        this.id = userJson.id;
         this.username = userJSON.username;
         this.password_digest = userJSON.password_digest;
         this.name = userJSON.name;
@@ -9,7 +8,7 @@ class User {
         this.won_adventure_3 = userJSON.won_adventure_3;
         this.won_adventure_4 = userJSON.won_adventure_4;
     }
-    
+
     userHTML() {
         return (`
             <div class= "allUsers"> 
