@@ -74,20 +74,7 @@ class Users {
         this.adapter
             .getUsers()
             .then(users =>{
-                for(const user of users) {
-                    let userObj = {
-                        id: user.id,  
-                        username: user.username, 
-                        password_digest: user.password_digest, 
-                        name: user.name, 
-                        won_adventure_1: user.won_adventure_1, 
-                        won_adventure_2: user.won_adventure_2, 
-                        won_adventure_3: user.won_adventure_3, 
-                        won_adventure_4: user.won_adventure_4
-                    }
-                    let newUser = new User(userObj)
-                    this.users.push(newUser)
-                }
+                users.forEach(user => this.users.push(new User(user)))
             })
             .then(() => {
                 this.renderUsers()
