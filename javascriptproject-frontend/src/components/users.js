@@ -7,7 +7,7 @@ class Users {
         this.changemusic()
 /*        this.welcome()
         this.startScreen()
-*/        this.fetchAndLoadUsers() 
+*/      this.fetchAndLoadUsers() 
     }
 
     startMusic() {
@@ -72,13 +72,26 @@ class Users {
 
     fetchAndLoadUsers() {
         this.adapter
-        .getUsers()
-        .then(users => {
-            users.forEach(user => this.users.push(new User(user)))
-        })
-        .then(() => {
-            this.renderUsers()
-        })
+            .getUsers()
+            .then(users =>{
+                for(const user of users) {
+                    let userObj = {
+                        id: user.id,  
+                        username: user.username, 
+                        password_digest: user.password_digest, 
+                        name: user.name, 
+                        won_adventure_1: user.won_adventure_1, 
+                        won_adventure_2: user.won_adventure_2, 
+                        won_adventure_3: user.won_adventure_3, 
+                        won_adventure_4: user.won_adventure_4
+                    }
+                    let newUser = new User(userObj)
+                    this.users.push(newUser)
+                }
+            })
+            .then(() => {
+                this.renderUsers()
+            })
     }; 
 
     renderUsers() {
@@ -86,6 +99,7 @@ class Users {
             const divCard = document.createElement('div')
             divCard.className = "user-card"
 
+            divCard.id = `${user.id}`
             divCard.username = `${user.username}`
             divCard.password_digest = `${user.password_digest}`
             divCard.name = `${user.name}`

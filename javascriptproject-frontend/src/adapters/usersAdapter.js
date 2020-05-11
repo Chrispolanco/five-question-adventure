@@ -6,7 +6,7 @@ class UsersAdapter {
     }
 
     getUsers() {
-        return fetch(this.baseUrl).then(res => res.json())
+        return fetch(this.baseUrl).then(resp => resp.json())
     }
 
     newUser(username, password_digest, name) {
@@ -14,6 +14,7 @@ class UsersAdapter {
             username: username, 
             password_digest: password_digest, 
             name: name
+
         }
         return fetch(this.base.URL, {
             method: "POST", 
