@@ -1,5 +1,6 @@
 class User {
     constructor(userJSON) {
+        this.id = userJSON.id; 
         this.username = userJSON.username;
         this.password_digest = userJSON.password_digest;
         this.name = userJSON.name;

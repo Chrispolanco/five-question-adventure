@@ -83,19 +83,45 @@ class Users {
 
     renderUsers() {
         this.users.forEach(user => {
+
             const divCard = document.createElement('div')
-            divCard.className = "user-card"
-
-            divCard.id = `${user.id}`
-            divCard.username = `${user.username}`
-            divCard.password_digest = `${user.password_digest}`
-            divCard.name = `${user.name}`
-            divCard.won_adventure_1 = `${user.won_adventure_1}`
-            divCard.won_adventure_2 = `${user.won_adventure_2}`
-            divCard.won_adventure_3 = `${user.won_adventure_3}`
-            divCard.won_adventure_4 = `${user.won_adventure_4}`
-
+            divCard.className = "user_card"
+            const topInnerText = document.querySelector(".topInnerText");
             topInnerText.appendChild(divCard);
+
+            const user_ul = document.createElement('ul'); 
+            user_ul.className = "user_ul"
+            divCard.appendChild(user_ul);
+
+            const user_li_id = document.createElement('li'); 
+            user_li_id.className = "user_li"
+            user_li_id.innerText = `${user.id}`
+            user_ul.appendChild(user_li_id);
+            const user_li_password_digest = document.createElement('li'); 
+            user_li_password_digest.className = "user_li"
+            user_li_password_digest.innerText = `${user.password_digest}`
+            user_ul.appendChild(user_li_password_digest);
+            const user_li_name = document.createElement('li'); 
+            user_li_name.className = "user_li"
+            user_li_name.innerText = `${user.name}`
+            user_ul.appendChild(user_li_name);
+            const user_li_won_adventure_1= document.createElement('li'); 
+            user_li_won_adventure_1.className = "user_li"
+            user_li_won_adventure_1.innerText = `${user.won_adventure_1}`
+            user_ul.appendChild(user_li_won_adventure_1);
+            const user_li_won_adventure_2= document.createElement('li'); 
+            user_li_won_adventure_2.className = "user_li"
+            user_li_won_adventure_2.innerText = `${user.won_adventure_2}`
+            user_ul.appendChild(user_li_won_adventure_2);
+            const user_li_won_adventure_3= document.createElement('li'); 
+            user_li_won_adventure_3.className = "user_li"
+            user_li_won_adventure_3.innerText = `${user.won_adventure_3}`
+            user_ul.appendChild(user_li_won_adventure_3);
+            const user_li_won_adventure_4= document.createElement('li'); 
+            user_li_won_adventure_4.className = "user_li"
+            user_li_won_adventure_4.innerText = `${user.won_adventure_4}`
+            user_ul.appendChild(user_li_won_adventure_4);
+
         })
     }
 
