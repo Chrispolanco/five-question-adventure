@@ -141,6 +141,24 @@
     font-weight: bold;
   }
 
+  .login {
+    display: block;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin: auto; 
+    overflow: hidden;
+    opacity: 1;
+    border-radius: 8px;
+    margin-top: 65px;
+
+  }
+
+  .login_info {
+    font-size: 25px;
+
+  }
+
   .wrapper_questions{
     padding-top: 60px;
   }

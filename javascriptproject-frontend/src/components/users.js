@@ -7,7 +7,8 @@ class Users {
         this.changemusic()
 /*        this.welcome()
         this.startScreen()
-*/      this.fetchAndLoadUsers() 
+*/      this.login() 
+        this.fetchAndLoadUsers() 
     }
 
     startMusic() {
@@ -81,7 +82,29 @@ class Users {
             })
     }; 
 
-    renderUsers() {
+    login () {
+        const topInnerText = document.querySelector(".topInnerText");
+        topInnerText.classList.add("login") 
+        topInnerText.classList.remove("topInnerText"); 
+        topInnerText.innerText = "Welcome Back Hero"
+
+        const divLogin = document.createElement('field')
+        divLogin.className = "divlogin"
+        topInnerText.appendChild(divLogin)
+
+        const login_username = document.createElement('text_field') 
+        login_username.className = "login_info"
+        login_username.innerText= "Username"
+        divLogin.appendChild(login_username)
+
+        const login_password = document.createElement('password') 
+        login_password.className = "login_info"
+        login_password.innerText= "Password"
+        divLogin.appendChild(login_password)
+
+    }
+
+/*    renderUsers() {
         this.users.forEach(user => {
 
             const divCard = document.createElement('div')
@@ -124,6 +147,7 @@ class Users {
 
         })
     }
+*/ 
 
     first_question() {
         const questions = document.createElement('div'); 
