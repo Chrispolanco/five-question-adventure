@@ -94,7 +94,12 @@ class Users {
 
         topInnerText.appendChild(signin_form)
 
+        const signin_form_button = document.querySelector('#Login')
 
+        signin_form_button.addEventListener('click', (e) => {
+            e.preventDefault()
+            topInnerText.innerText = "worked"
+        })
     }
 
 /*    login () {
