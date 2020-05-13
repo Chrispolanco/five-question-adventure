@@ -206,3 +206,40 @@
     color: black;
   }
 
+  .top_sign_in {
+    font-size: 70px; 
+    color: crimson;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Rouge Script', cursive; 
+    font-weight: bold;
+    letter-spacing: -1px;
+    -webkit-text-stroke: 1px rgb(141, 220, 251);
+  }
+
+  .signin_form {
+    margin-top: 80px;
+    font-size: 60px;
+    display: none;
+    color: darkcyan;
+    -webkit-text-stroke: 1px white;
+  }
+
+  .signin_form button {
+    font-size: 40px;
+    color: darkcyan;
+    -webkit-text-stroke: 1px white;
+    font-family: 'Rouge Script', cursive; 
+    font-weight: bold;
+
+  }
+
+  .signin_form input {
+    background-color: white;
+    color: tomato;
+    font-weight: bold;
+    width: 260px;
+    height: 30px;
+    font-size: 30px;
+  }

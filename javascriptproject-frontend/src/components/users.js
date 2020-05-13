@@ -7,8 +7,9 @@ class Users {
         this.changemusic()
 /*        this.welcome()
         this.startScreen()
-*/      this.login() 
-        this.fetchAndLoadUsers() 
+      this.login() 
+*/       this.fetchAndLoadUsers() 
+        this.signin_form() 
     }
 
     startMusic() {
@@ -82,7 +83,21 @@ class Users {
             })
     }; 
 
-    login () {
+    signin_form() {
+        const topInnerText = document.querySelector(".topInnerText")
+        topInnerText.classList.add("top_sign_in")
+        topInnerText.classList.remove("topInnerText")
+        topInnerText.innerText = "How do we know your our brave hero?"
+
+        const signin_form = document.querySelector(".signin_form")
+        signin_form.style.display = "block"
+
+        topInnerText.appendChild(signin_form)
+
+
+    }
+
+/*    login () {
         const topInnerText = document.querySelector(".topInnerText");
         topInnerText.classList.add("login") 
         topInnerText.classList.remove("topInnerText"); 
@@ -103,7 +118,7 @@ class Users {
         divLogin.appendChild(login_password)
 
     }
-
+/* 
 /*    renderUsers() {
         this.users.forEach(user => {
 
