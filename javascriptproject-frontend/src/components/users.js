@@ -5,11 +5,12 @@ class Users {
         this.startMusic()
         this.changebg()
         this.changemusic()
-/*        this.welcome()
+        this.welcome()
         this.startScreen()
-      this.login() 
-*/       this.fetchAndLoadUsers() 
-        this.signin_form() 
+        this.test()
+/*        this.login() 
+this.fetchAndLoadUsers() 
+        */ 
     }
 
     startMusic() {
@@ -42,7 +43,7 @@ class Users {
         const topInnerText = document.querySelector(".topInnerText");
         topInnerText.classList.add("welcome") 
         topInnerText.classList.add("welcome:hover") 
-        topInnerText.innerText = "Welcome traveler your journey awaits"
+        topInnerText.innerText = "Welcome Hero your journey awaits"
         topInnerText.classList.remove("topInnerText")
     }
  
@@ -52,25 +53,33 @@ class Users {
         setTimeout(function() {
             topInnerText.classList.remove("welcome"); 
             topInnerText.classList.remove("welcome:hover"); 
-            topInnerText.classList.add("startScreen");
+            topInnerText.classList.add("startScreen"); 
+
             topInnerText.innerText = "Is this your first adventure?"; 
 
             const menu_wrapper = document.createElement('div'); 
             menu_wrapper.className = "menu_wrapper"
             topInnerText.appendChild(menu_wrapper); 
-
+    
             const menu_choice_one = document.createElement('Button'); 
             menu_choice_one.className = "menu_choice";
             menu_choice_one.innerText = "New Adventure"; 
-
+    
             const menu_choice_two = document.createElement('Button'); 
             menu_choice_two.className = "menu_choice";
             menu_choice_two.innerText = "Log In"; 
-
+    
             menu_wrapper.appendChild(menu_choice_one);
             menu_wrapper.appendChild(menu_choice_two); 
-        }, 3000); 
+        }, 1000); 
+
     }
+
+    test(){
+        const LogInBtn = document.querySelector('.welcome');   
+        LogInBtn.innerText = "worked"; 
+    };  
+
 
     fetchAndLoadUsers() {
         this.adapter
@@ -81,92 +90,47 @@ class Users {
             .then(() => {
                 this.renderUsers()
             })
-    }; 
+    };  
 
-/*    signin_form() {
-        const topInnerText = document.querySelector(".topInnerText")
-        topInnerText.classList.add("top_sign_in")
-        topInnerText.classList.remove("topInnerText")
-        topInnerText.innerText = "How do we know your our brave hero?"
-
-        const signin_form = document.querySelector(".signin_form")
-        signin_form.style.display = "block"
-
-        topInnerText.appendChild(signin_form)
-
-        const signin_form_button = document.querySelector('#Login')
-
-        signin_form_button.addEventListener('click', (e) => {
-            e.preventDefault()
-            topInnerText.innerText = "worked"
-        })
-    }
-*/ 
-
-/*    login () {
+    renderUsers() {
         const topInnerText = document.querySelector(".topInnerText");
-        topInnerText.classList.add("login") 
-        topInnerText.classList.remove("topInnerText"); 
-        topInnerText.innerText = "Welcome Back Hero"
+        topInnerText.classList.toggle("selectUser"); 
 
-        const divLogin = document.createElement('field')
-        divLogin.className = "divlogin"
-        topInnerText.appendChild(divLogin)
+        topInnerText.innerText = "Which Brave Hero Might You Be?"
 
-        const login_username = document.createElement('text_field') 
-        login_username.className = "login_info"
-        login_username.innerText= "Username"
-        divLogin.appendChild(login_username)
-
-        const login_password = document.createElement('password') 
-        login_password.className = "login_info"
-        login_password.innerText= "Password"
-        divLogin.appendChild(login_password)
-
-    }
-*/  
-
-        renderUsers() {
         this.users.forEach(user => {
 
-            const divCardUsers = document.createElement('div')
-            divCardUsers.className = "user_card"
-            const topInnerText = document.querySelector(".topInnerText");
-            topInnerText.appendChild(divCardUsers);
 
-            const userUl = document.createElement('ul'); 
-            userUl.className = "user_ul"
-            divCardUsers.appendChild(userUl);
+        const UserLiName = document.createElement('button'); 
+        UserLiName.className = "buttonUsers"
+        UserLiName.innerText = `${user.name}`
+        topInnerText.appendChild(UserLiName);
 
-            const userLiId = document.createElement('li'); 
-            userLiId.className = "user_li"
-            userLiId.innerText = `${user.id}`
-            userUl.appendChild(userLiId);
-            const UserLiPasswordDigest = document.createElement('li'); 
-            UserLiPasswordDigest.className = "user_li"
-            UserLiPasswordDigest.innerText = `${user.password_digest}`
-            userUl.appendChild(UserLiPasswordDigest);
-            const UserLiName = document.createElement('li'); 
-            UserLiName.className = "user_li"
-            UserLiName.innerText = `${user.name}`
-            userUl.appendChild(UserLiName);
-            const UserLiWonAdventure1= document.createElement('li'); 
-            UserLiWonAdventure1.className = "user_li"
-            UserLiWonAdventure1.innerText = `${user.won_adventure_1}`
-            userUl.appendChild(UserLiWonAdventure1);
-            const UserLiWonAdventure2= document.createElement('li'); 
-            UserLiWonAdventure2.className = "user_li"
-            UserLiWonAdventure2.innerText = `${user.won_adventure_2}`
-            userUl.appendChild(UserLiWonAdventure2);
-            const UserLiWonAdventure3= document.createElement('li'); 
-            UserLiWonAdventure3.className = "user_li"
-            UserLiWonAdventure3.innerText = `${user.won_adventure_3}`
-            userUl.appendChild(UserLiWonAdventure3);
-            const UserLiWonAdventure4= document.createElement('li'); 
-            UserLiWonAdventure4.className = "user_li"
-            UserLiWonAdventure4.innerText = `${user.won_adventure_4}`
-            userUl.appendChild(UserLiWonAdventure4);
-
+/*              const userLiId = document.createElement('li'); 
+        userLiId.className = "user_li"
+        userLiId.innerText = `${user.id}`
+        topInnerText.appendChild(userLiId);
+        const UserLiPasswordDigest = document.createElement('li'); 
+        UserLiPasswordDigest.className = "user_li"
+        UserLiPasswordDigest.innerText = `${user.password_digest}`
+        topInnerText.appendChild(UserLiPasswordDigest);
+        const UserLiWonAdventure1= document.createElement('li'); 
+        UserLiWonAdventure1.className = "user_li"
+        UserLiWonAdventure1.innerText = `${user.won_adventure_1}`
+        topInnerText.appendChild(UserLiWonAdventure1);
+        const UserLiWonAdventure2= document.createElement('li'); 
+        UserLiWonAdventure2.className = "user_li"
+        UserLiWonAdventure2.innerText = `${user.won_adventure_2}`
+        topInnerText.appendChild(UserLiWonAdventure2);
+        const UserLiWonAdventure3= document.createElement('li'); 
+        UserLiWonAdventure3.className = "user_li"
+        UserLiWonAdventure3.innerText = `${user.won_adventure_3}`
+        topInnerText.appendChild(UserLiWonAdventure3);
+        const UserLiWonAdventure4= document.createElement('li'); 
+        UserLiWonAdventure4.className = "user_li"
+        UserLiWonAdventure4.innerText = `${user.won_adventure_4}`
+        topInnerText.appendChild(UserLiWonAdventure4);
+*/
         })
     }
 
@@ -212,3 +176,66 @@ class Users {
 
 
        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*    signin_form() {
+        const topInnerText = document.querySelector(".topInnerText")
+        topInnerText.classList.add("top_sign_in")
+        topInnerText.classList.remove("topInnerText")
+        topInnerText.innerText = "How do we know your our brave hero?"
+
+        const signin_form = document.querySelector(".signin_form")
+        signin_form.style.display = "block"
+
+        topInnerText.appendChild(signin_form)
+
+        const signin_form_button = document.querySelector('#Login')
+
+        signin_form_button.addEventListener('click', (e) => {
+            e.preventDefault()
+            topInnerText.innerText = "worked"
+        })
+    }
+*/ 
+
+/*    login () {
+        const topInnerText = document.querySelector(".topInnerText");
+        topInnerText.classList.add("login") 
+        topInnerText.classList.remove("topInnerText"); 
+        topInnerText.innerText = "Welcome Back Hero"
+
+        const divLogin = document.createElement('field')
+        divLogin.className = "divlogin"
+        topInnerText.appendChild(divLogin)
+
+        const login_username = document.createElement('text_field') 
+        login_username.className = "login_info"
+        login_username.innerText= "Username"
+        divLogin.appendChild(login_username)
+
+        const login_password = document.createElement('password') 
+        login_password.className = "login_info"
+        login_password.innerText= "Password"
+        divLogin.appendChild(login_password)
+
+    }
+*/ 
