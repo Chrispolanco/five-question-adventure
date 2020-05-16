@@ -40,38 +40,41 @@ this.fetchAndLoadUsers()
     } 
 
     welcome() {
-        let topInnerText = document.querySelector(".topInnerText");
-        topInnerText.classList.add("welcome"); 
-        topInnerText.classList.add("welcome:hover"); 
-        topInnerText.innerText = "Welcome Hero your journey awaits"; 
-        topInnerText.classList.remove("topInnerText"); 
+        this.topInnerText = document.querySelector(".topInnerText");
+        this.topInnerText.classList.add("welcome"); 
+        this.topInnerText.classList.add("welcome:hover"); 
+        this.topInnerText.innerText = "Welcome Hero your journey awaits"; 
+        this.topInnerText.classList.remove("topInnerText"); 
 
-        setTimeout(menuChoice, 2000); 
-
-        function menuChoice() {
-            topInnerText.classList.remove("welcome"); 
-            topInnerText.classList.remove("welcome:hover"); 
-            topInnerText.classList.add("startScreen"); 
-
-            topInnerText.innerText = "Is this your first adventure?"; 
-
-            let menu_wrapper = document.createElement('div'); 
-            menu_wrapper.className = "menu_wrapper"
-            topInnerText.appendChild(menu_wrapper); 
-    
-            let menu_choice_one = document.createElement('Button'); 
-            menu_choice_one.className = "menu_choice";
-            menu_choice_one.innerText = "New Adventure"; 
-    
-            let menu_choice_two = document.createElement('Button'); 
-            menu_choice_two.className = "menu_choice";
-            menu_choice_two.innerText = "Log In"; 
-    
-            menu_wrapper.appendChild(menu_choice_one);
-            menu_wrapper.appendChild(menu_choice_two); 
-        }
-
+        setTimeout(this.menuChoice.bind(this), 2000); 
     }
+
+    menuChoice() {
+        console.log(this); 
+        this.topInnerText.classList.remove("welcome"); 
+        this.topInnerText.classList.remove("welcome:hover"); 
+        this.topInnerText.classList.add("startScreen"); 
+
+        this.topInnerText.innerText = "Is this your first adventure?"; 
+
+        this.menu_wrapper = document.createElement('div'); 
+        this.menu_wrapper.className = "menu_wrapper"
+        this.topInnerText.appendChild(this.menu_wrapper); 
+
+        this.menu_choice_one = document.createElement('Button'); 
+        this.menu_choice_one.className = "menu_choice";
+        this.menu_choice_one.innerText = "New Adventure"; 
+
+        this.menu_choice_two = document.createElement('Button'); 
+        this.menu_choice_two.className = "menu_choice";
+        this.menu_choice_two.innerText = "Log In"; 
+
+        this.menu_wrapper.appendChild(this.menu_choice_one);
+        this.menu_wrapper.appendChild(this.menu_choice_two); 
+
+    }; 
+
+
 
 /*    test(){
         const LogInBtn = document.querySelector('.welcome');   
