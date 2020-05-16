@@ -2,84 +2,82 @@ class Users {
     constructor() {
         this.users = []
         this.adapter = new UsersAdapter()
-        this.startMusic()
         this.changebg()
         this.changemusic()
         this.welcome()
-        this.startScreen()
-        this.test()
 /*        this.login() 
+        this.startMusic()
 this.fetchAndLoadUsers() 
         */ 
     }
 
-    startMusic() {
-        const audio = document.getElementById('audio');
-        audio.play(); 
+/*    startMusic() {
+        this.audio = document.getElementById('audio');
+        this.audio.mute = false;
+        this.audio.play();      
     }
+*/
 
     changebg() {
-        const redBtn = document.querySelector('#toggle-red');   
-        redBtn.addEventListener('click',(e)=>{
+        this.redBtn = document.querySelector('#toggle-red');   
+        this.redBtn.addEventListener('click',(e)=>{
             e.preventDefault();
           document.body.style.backgroundImage =  "url('./images/2.jpg')";
        })
     }
 
     changemusic() { 
-        const blueBtn = document.querySelector('#toggle-blue');
-        blueBtn.addEventListener('click',(e)=>{
+        this.blueBtn = document.querySelector('#toggle-blue');
+        this.blueBtn.addEventListener('click',(e)=>{
             e.preventDefault();
-            const audio = document.getElementById('audio');
-            const audiosource = document.getElementById('audiosource'); 
-            audiosource.src = "./music/01 - Fantastic Journey.mp3"; 
-            audio.pause(); 
-            audio.load(); 
-            audio.play(); 
+            this.audio = document.getElementById('audio');
+            this.audiosource = document.getElementById('audiosource'); 
+            this.audiosource.src = "./music/01 - Fantastic Journey.mp3"; 
+            this.audio.pause(); 
+            this.audio.load(); 
+            this.audio.play(); 
         })  
     } 
 
     welcome() {
-        const topInnerText = document.querySelector(".topInnerText");
-        topInnerText.classList.add("welcome") 
-        topInnerText.classList.add("welcome:hover") 
-        topInnerText.innerText = "Welcome Hero your journey awaits"
-        topInnerText.classList.remove("topInnerText")
-    }
- 
-    startScreen() {
-        const topInnerText = document.querySelector(".welcome");
+        let topInnerText = document.querySelector(".topInnerText");
+        topInnerText.classList.add("welcome"); 
+        topInnerText.classList.add("welcome:hover"); 
+        topInnerText.innerText = "Welcome Hero your journey awaits"; 
+        topInnerText.classList.remove("topInnerText"); 
 
-        setTimeout(function() {
+        setTimeout(menuChoice, 2000); 
+
+        function menuChoice() {
             topInnerText.classList.remove("welcome"); 
             topInnerText.classList.remove("welcome:hover"); 
             topInnerText.classList.add("startScreen"); 
 
             topInnerText.innerText = "Is this your first adventure?"; 
 
-            const menu_wrapper = document.createElement('div'); 
+            let menu_wrapper = document.createElement('div'); 
             menu_wrapper.className = "menu_wrapper"
             topInnerText.appendChild(menu_wrapper); 
     
-            const menu_choice_one = document.createElement('Button'); 
+            let menu_choice_one = document.createElement('Button'); 
             menu_choice_one.className = "menu_choice";
             menu_choice_one.innerText = "New Adventure"; 
     
-            const menu_choice_two = document.createElement('Button'); 
+            let menu_choice_two = document.createElement('Button'); 
             menu_choice_two.className = "menu_choice";
             menu_choice_two.innerText = "Log In"; 
     
             menu_wrapper.appendChild(menu_choice_one);
             menu_wrapper.appendChild(menu_choice_two); 
-        }, 1000); 
+        }
 
     }
 
-    test(){
+/*    test(){
         const LogInBtn = document.querySelector('.welcome');   
         LogInBtn.innerText = "worked"; 
     };  
-
+*/
 
     fetchAndLoadUsers() {
         this.adapter
