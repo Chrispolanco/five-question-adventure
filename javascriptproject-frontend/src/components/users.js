@@ -92,38 +92,24 @@ this.fetchAndLoadUsers()
         this.topInnerText.innerText = "Which Brave Hero Might You Be?"
 
         this.users.forEach(user => {
-        this.userLiName = document.createElement('button'); 
-        this.userLiName.className = "buttonUsers"
-        this.userLiName.innerText = `${user.name}`
-        this.topInnerText.appendChild(this.userLiName);
+        this.userInfo = document.createElement('button'); 
+        this.userInfo.className = "buttonUsers"
+        this.userInfo.innerText = `${user.name}`
+        this.userInfo.id = `${user.id}`
+        this.topInnerText.appendChild(this.userInfo);
 
-/*              const userLiId = document.createElement('li'); 
-        userLiId.className = "user_li"
-        userLiId.innerText = `${user.id}`
-        topInnerText.appendChild(userLiId);
-        const UserLiPasswordDigest = document.createElement('li'); 
-        UserLiPasswordDigest.className = "user_li"
-        UserLiPasswordDigest.innerText = `${user.password_digest}`
-        topInnerText.appendChild(UserLiPasswordDigest);
-        const UserLiWonAdventure1= document.createElement('li'); 
-        UserLiWonAdventure1.className = "user_li"
-        UserLiWonAdventure1.innerText = `${user.won_adventure_1}`
-        topInnerText.appendChild(UserLiWonAdventure1);
-        const UserLiWonAdventure2= document.createElement('li'); 
-        UserLiWonAdventure2.className = "user_li"
-        UserLiWonAdventure2.innerText = `${user.won_adventure_2}`
-        topInnerText.appendChild(UserLiWonAdventure2);
-        const UserLiWonAdventure3= document.createElement('li'); 
-        UserLiWonAdventure3.className = "user_li"
-        UserLiWonAdventure3.innerText = `${user.won_adventure_3}`
-        topInnerText.appendChild(UserLiWonAdventure3);
-        const UserLiWonAdventure4= document.createElement('li'); 
-        UserLiWonAdventure4.className = "user_li"
-        UserLiWonAdventure4.innerText = `${user.won_adventure_4}`
-        topInnerText.appendChild(UserLiWonAdventure4);
-*/
+            this.userInfo.addEventListener('click',(e) =>{
+                e.preventDefault();
+                this.topInnerText.innerText = "Hello" + ` ${user.name} `+ "Select your Hero"
+
+
+                this.userInfo.innerText = `${user.won_adventure_1}`
+                this.userInfo.innerText = `${user.won_adventure_2}`
+                this.userInfo.innerText = `${user.won_adventure_3}`
+                this.userInfo.innerText = `${user.won_adventure_4}`
+            })
         })
-    }; 
+    };   
 
     first_question() {
         const questions = document.createElement('div'); 
