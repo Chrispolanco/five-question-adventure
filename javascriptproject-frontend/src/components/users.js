@@ -46,11 +46,10 @@ this.fetchAndLoadUsers()
         this.topInnerText.innerText = "Welcome Hero your journey awaits"; 
         this.topInnerText.classList.remove("topInnerText"); 
 
-        setTimeout(this.menuChoice.bind(this), 2000); 
+        setTimeout(this.menuChoice.bind(this), 1000); 
     }
 
     menuChoice() {
-        console.log(this); 
         this.topInnerText.classList.remove("welcome"); 
         this.topInnerText.classList.remove("welcome:hover"); 
         this.topInnerText.classList.add("startScreen"); 
@@ -72,15 +71,10 @@ this.fetchAndLoadUsers()
         this.menu_wrapper.appendChild(this.menu_choice_one);
         this.menu_wrapper.appendChild(this.menu_choice_two); 
 
+        this.menu_choice_two.addEventListener('click', this.fetchAndLoadUsers.bind(this)); 
+        
     }; 
 
-
-
-/*    test(){
-        const LogInBtn = document.querySelector('.welcome');   
-        LogInBtn.innerText = "worked"; 
-    };  
-*/
 
     fetchAndLoadUsers() {
         this.adapter
@@ -94,18 +88,14 @@ this.fetchAndLoadUsers()
     };  
 
     renderUsers() {
-        const topInnerText = document.querySelector(".topInnerText");
-        topInnerText.classList.toggle("selectUser"); 
-
-        topInnerText.innerText = "Which Brave Hero Might You Be?"
+        this.topInnerText.classList.toggle("selectUser"); 
+        this.topInnerText.innerText = "Which Brave Hero Might You Be?"
 
         this.users.forEach(user => {
-
-
-        const UserLiName = document.createElement('button'); 
-        UserLiName.className = "buttonUsers"
-        UserLiName.innerText = `${user.name}`
-        topInnerText.appendChild(UserLiName);
+        this.userLiName = document.createElement('button'); 
+        this.userLiName.className = "buttonUsers"
+        this.userLiName.innerText = `${user.name}`
+        this.topInnerText.appendChild(this.userLiName);
 
 /*              const userLiId = document.createElement('li'); 
         userLiId.className = "user_li"
@@ -133,7 +123,7 @@ this.fetchAndLoadUsers()
         topInnerText.appendChild(UserLiWonAdventure4);
 */
         })
-    }
+    }; 
 
     first_question() {
         const questions = document.createElement('div'); 
