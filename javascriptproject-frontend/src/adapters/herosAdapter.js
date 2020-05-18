@@ -1,11 +1,11 @@
 class HerosAdapter{
 
     constructor() {
-        this.baseURL = 'http://localhost:3000/heros'
+        this.heroBaseURL = 'http://localhost:3000/heros'
     }
 
     getHeros() {
-        return fetch(this.baseURL).then(resp = resp.json())
+        return fetch(this.heroBaseURL).then(resp => resp.json())
     }
-}
 
+}

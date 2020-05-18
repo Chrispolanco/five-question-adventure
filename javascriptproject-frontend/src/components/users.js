@@ -2,13 +2,15 @@ class Users {
     constructor() {
         this.users = []
         this.adapter = new UsersAdapter()
+        this.heros = []
+        this.herosAdapter = new HerosAdapter()
         this.changebg()
         this.changemusic()
         this.welcome()
-/*        this.login() 
+/*
+        this.login() 
         this.startMusic()
-this.fetchAndLoadUsers() 
-        */ 
+*/ 
     }
 
 /*    startMusic() {
@@ -83,7 +85,7 @@ this.fetchAndLoadUsers()
                 users.forEach(user => this.users.push(new User(user)))
             })
             .then(() => {
-                this.renderUsers()
+                this.fetchAndLoadHeros()
             })
     };  
 
@@ -100,16 +102,38 @@ this.fetchAndLoadUsers()
 
             this.userInfo.addEventListener('click',(e) =>{
                 e.preventDefault();
-                this.topInnerText.innerText = "Hello" + ` ${user.name} `+ "Select your Hero"
+                fetchAndLoadHeros(); 
 
 
-                this.userInfo.innerText = `${user.won_adventure_1}`
-                this.userInfo.innerText = `${user.won_adventure_2}`
-                this.userInfo.innerText = `${user.won_adventure_3}`
-                this.userInfo.innerText = `${user.won_adventure_4}`
+                this.topInnerText.innerText = "Hello" + ` ${user.name} `+ "- Select your Hero"
+
             })
         })
     };   
+
+    fetchAndLoadHeros() {
+        this.herosAdapter
+            .getHeros()
+            .then(heros =>{
+                heros.forEach(hero => this.heros.push(new Hero(hero)))
+            })
+            .then(() => {
+                this.renderHeros()
+            })
+    }; 
+
+    renderHeros() {
+            this.heros.forEach(hero => {
+            this.heroInfo = document.createElement('li'); 
+            this.heroInfo.className = "buttonUsers"
+            this.heroInfo.innerText = `${hero.name}`
+            this.heroInfo.id = `${hero.id}`
+            
+            this.topInnerText.appendChild(heroInfo);
+            }) 
+    };  
+
+
 
     first_question() {
         const questions = document.createElement('div'); 

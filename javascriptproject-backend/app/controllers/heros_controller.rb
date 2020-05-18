@@ -32,7 +32,7 @@ class HerosController < ApplicationController
     private
 
         def hero_params
-            params.require(:hero).permit(:name, :character_class, :health)
+            params.require(:hero).permit(:name, :character_class, :health. :age)
         end
 
 end
