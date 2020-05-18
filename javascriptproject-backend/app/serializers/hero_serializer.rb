@@ -11,10 +11,12 @@ class HeroSerializer
           except: [:updated_at, :created_at]
         }
       }, 
-      only: [:name, :character_class, :age, :health]
+      only: [:name, :character_class, :age, :health, :id]
     }
     @hero.to_json(options)
   end 
 
 end
+
+
 

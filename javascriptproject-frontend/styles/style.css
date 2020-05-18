@@ -236,6 +236,24 @@
     color: crimson;
   }
 
+  .buttonHeros {
+    display:block	;
+    font-size: 30px;
+    color: darkcyan;
+    -webkit-text-stroke: 1px white;
+    font-family: 'Rouge Script', cursive; 
+    font-weight: bold;
+    letter-spacing: 2px;
+    opacity: .75;
+    line-height: 2;
+    border-radius: 6px;
+    margin-left: 35%;
+    width: 30%;
+    padding: 0px;
+    margin-top: 5px;
+  }
+
+
 
 
 

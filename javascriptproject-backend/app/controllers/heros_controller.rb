@@ -1,29 +1,29 @@
 class HerosController < ApplicationController
     
-    def index
-        @heros = Hero.all 
-        render json: HeroSerializer.new(@heros).to_serialized_json, status: 200
+    def new 
+        hero = Hero.new 
+        render json: HeroSerializer.new(hero).to_serialized_json
     end 
 
-    def new 
-        @hero = Hero.new 
-        render json: HeroSerializer.new(@hero).to_serialized_json, status: 200 
+    def index
+        heros = Hero.all 
+        render json: HeroSerializer.new(heros).to_serialized_json
     end 
     
     def show 
-        @hero = Hero.find(params[:id])
-        render json: HeroSerializer.new(@hero).to_serialized_json, status: 200 
+        hero = Hero.find(params[:id])
+        render json: HeroSerializer.new(hero).to_serialized_json
     end 
 
     def create 
-        @hero = Hero.create(hero_params) 
-        render json: HeroSerializer.new(@hero).to_serialized_json, status: 200 
+        hero = Hero.create(hero_params) 
+        render json: HeroSerializer.new(hero).to_serialized_json
     end 
 
     def update 
-        @hero = Hero.find(params[:id])
-        if @hero.update(hero_params) 
-            render json: HeroSerializer.new(@hero).to_serialized_json, status: 200
+        hero = Hero.find(params[:id])
+        if hero.update(hero_params) 
+            render json: HeroSerializer.new(hero).to_serialized_json
         else 
             render json: {status: 500}
         end 
@@ -32,7 +32,7 @@ class HerosController < ApplicationController
     private
 
         def hero_params
-            params.require(:hero).permit(:name, :character_class, :health. :age)
+            params.require(:hero).permit(:name, :character_class, :health, :age, :id)
         end
 
 end

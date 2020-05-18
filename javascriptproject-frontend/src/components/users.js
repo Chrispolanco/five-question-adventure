@@ -85,7 +85,7 @@ class Users {
                 users.forEach(user => this.users.push(new User(user)))
             })
             .then(() => {
-                this.fetchAndLoadHeros()
+                this.renderUsers()
             })
     };  
 
@@ -102,11 +102,8 @@ class Users {
 
             this.userInfo.addEventListener('click',(e) =>{
                 e.preventDefault();
-                fetchAndLoadHeros(); 
-
-
                 this.topInnerText.innerText = "Hello" + ` ${user.name} `+ "- Select your Hero"
-
+                this.fetchAndLoadHeros(); 
             })
         })
     };   
@@ -120,16 +117,20 @@ class Users {
             .then(() => {
                 this.renderHeros()
             })
+
     }; 
 
+
     renderHeros() {
+
             this.heros.forEach(hero => {
-            this.heroInfo = document.createElement('li'); 
-            this.heroInfo.className = "buttonUsers"
+            this.heroInfo = document.createElement('button'); 
+            this.heroInfo.className = "buttonHeros"
             this.heroInfo.innerText = `${hero.name}`
             this.heroInfo.id = `${hero.id}`
             
-            this.topInnerText.appendChild(heroInfo);
+            this.topInnerText.appendChild(this.heroInfo);
+
             }) 
     };  
 
