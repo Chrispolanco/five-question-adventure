@@ -5,7 +5,7 @@ class AdventuresAdapter{
     }
 
     getAdventures() {
-        return fetch(this.adventureBaseURL).then(resp = resp.json())
+        return fetch(this.adventureBaseURL).then(resp => resp.json())
     }
 }
 
