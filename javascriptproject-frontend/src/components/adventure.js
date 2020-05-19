@@ -1,6 +1,5 @@
 class Adventure {
     constructor(adventureJson) {
-        this.adventure_id = adventureJson.adventure_id; 
         this.adventure_number = adventureJson.adventure_number; 
         this.story = adventureJson.story; 
         this.questions_1 = adventureJson.questions_1; 

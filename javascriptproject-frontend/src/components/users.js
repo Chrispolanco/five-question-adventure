@@ -132,7 +132,7 @@ class Users {
 
             this.heroInfo.addEventListener('click',(e) =>{
                 e.preventDefault();
-                this.fetchAndLoadAdventures(); 
+                this.fetchAndLoadAdventures.bind(this); 
 
             }) 
         }) 
@@ -150,17 +150,19 @@ class Users {
     }; 
 
     renderAdventures() {
-        this.topInnerText.innerText = "Which Adventure is calling your name"; 
+        this.topInnerText.innerText = `${this.heroInfo.innerText}, `+ "which adventure calls you?"; 
     
         this.adventures.forEach(adventure => {
         this.adventureBTN = document.createElement('button'); 
         this.adventureBTN.className = "buttonHeros"
-        this.adventureBTN.innerText = `${adventure.story}`
-        this.adventureBTN.id = `${adventure.id}`
+        this.adventureBTN.innerText = `${adventure.hero_id}`
+        this.adventureBTN.heroId = `${adventure.hero_id}`
 
-        this.topInnerText.appendChild(this.adventureBTN); 
+        })
 
-        }) 
+        if (this.adventureBTN.heroId === this.heroInfo.id ) {
+            this.topInnerText.appendChild(this.adventureBTN); 
+        }
     };  
 
 
