@@ -4,6 +4,8 @@ class Users {
         this.adapter = new UsersAdapter()
         this.heros = []
         this.herosAdapter = new HerosAdapter()
+        this.adapter = new AdventuresAdapter() 
+        this.adventures = [] 
         this.changebg()
         this.changemusic()
         this.welcome()
@@ -117,23 +119,42 @@ class Users {
             .then(() => {
                 this.renderHeros()
             })
-
     }; 
 
-
     renderHeros() {
-
             this.heros.forEach(hero => {
             this.heroInfo = document.createElement('button'); 
             this.heroInfo.className = "buttonHeros"
             this.heroInfo.innerText = `${hero.name}`
             this.heroInfo.id = `${hero.id}`
-            
-            this.topInnerText.appendChild(this.heroInfo);
+            this.topInnerText.appendChild(this.heroInfo); 
 
             }) 
     };  
 
+    fetchAndLoadAdventures() {
+        this.herosAdapter
+            .getAdventures()
+            .then(adventures =>{
+                adventures.forEach(adventure => this.adventures.push(new Adventure(adventure)))
+            })
+            .then(() => {
+                this.renderAdventures()
+            })
+    }; 
+
+    renderAdventures() {
+        this.topInnerText = "Which Adventure is calling you" + `${hero.name}` +"?"; 
+
+        this.adventures.forEach(adventure => {
+        this.adventureBTN = document.createElement('button'); 
+        this.adventureBTN.className = "buttonHeros"
+        this.adventureBTN.innerText = `${adventure.story}`
+        this.adventureBTN.id = `${adventure.id}`
+        this.topInnerText.appendChild(this.adventureBTN); 
+
+        }) 
+};  
 
 
     first_question() {

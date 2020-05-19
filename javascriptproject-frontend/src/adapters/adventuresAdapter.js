@@ -1,11 +1,11 @@
 class AdventuresAdapter{
 
     constructor() {
-        this.baseURL = 'http://localhost:3000/adventures'
+        this.adventureBaseURL = 'http://localhost:3000/adventures'
     }
 
     getAdventures() {
-        return fetch(this.baseURL).then(resp = resp.json())
+        return fetch(this.adventureBaseURL).then(resp = resp.json())
     }
 }
 

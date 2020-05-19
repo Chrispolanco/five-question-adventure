@@ -253,6 +253,11 @@
     margin-top: 5px;
   }
 
+  .buttonHeros:hover {
+    opacity: 1;
+    color: crimson;
+  }
+
 
 
 
