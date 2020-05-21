@@ -7,8 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Hero.create([
-    {name: "Link", character_class: "warrior", age: 17, health: 3}, 
-    {name: "Cloud", character_class: "striker", age: 19, health: 3}
+    {name: "Tidus", character_class: "warrior", age: 17, health: 1}, 
+    {name: "Cloud", character_class: "soldier", age: 19, health: 1}, 
+    {name: "Noctis", character_class: "striker", age: 19, health: 1}, 
+    {name: "Zack", character_class: "soldier", age: 19, health: 1}
 ]); 
 
 Adventure.create([
