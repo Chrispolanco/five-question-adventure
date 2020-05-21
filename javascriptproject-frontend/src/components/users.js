@@ -123,16 +123,16 @@ class Users {
         this.topInnerText.innerText = "Which Brave Hero Might You Be?"
 
         this.heros.forEach(hero => {
-            const heroInfo1 = document.createElement('button')
-            heroInfo1.className = "buttonHeros"
-            heroInfo1.innerText = `${hero.name}`
-            heroInfo1.innerText = `${hero.id}`
-            this.topInnerText.appendChild(heroInfo1)
+            const heroInfo = document.createElement('button')
+            heroInfo.className = "buttonHeros"
+            heroInfo.innerText = `${hero.name}`
+            heroInfo.id = `${hero.id}`
+            this.topInnerText.appendChild(heroInfo)
 
-            heroInfo1.addEventListener('click', (e) => {
+            heroInfo.addEventListener('click', (e) => {
                 e.preventDefault();
-                this.topInnerText.innerText = `${heroInfo1.innerText}, ` + "which adventure calls you?"
-                this.heroId = heroInfo1.innerText;
+                this.topInnerText.innerText = `${heroInfo.innerText}, ` + "which adventure calls you?"
+                this.hero = heroInfo.id;
                 this.fetchAndLoadAdventures(); 
             })
         })
@@ -151,15 +151,19 @@ class Users {
     };
 
     renderAdventures() {
-        console.log('herroId', this.heroId);
         this.adventures.forEach(adventure => {
-            this.adventureBTN = document.createElement('button');
-            this.adventureBTN.className = "buttonHeros"
-            this.adventureBTN.innerText = `${adventure.hero_id}`
-            this.adventureBTN.heroId = `${adventure.hero_id}`
-
-        })
+            const adventureBTN = document.createElement('button');
+            adventureBTN.className = "buttonHeros"
+            adventureBTN.innerText = `${adventure.hero_id}`
+            adventureBTN.heroId = `${adventure.hero_id}`
+        
+            if (adventureBTN.heroId === this.hero) {
+                this.topInnerText.appendChild(adventureBTN);
+            }   
+        })  
     };
+
+
 
 
     first_question() {
