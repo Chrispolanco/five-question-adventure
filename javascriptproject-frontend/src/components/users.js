@@ -154,7 +154,7 @@ class Users {
         this.adventures.forEach(adventure => {
             const adventureBTN = document.createElement('button');
             adventureBTN.className = "buttonHeros"
-            adventureBTN.innerText = `${adventure.hero_id}`
+            adventureBTN.innerText = `${adventure.adventure_number}`
             adventureBTN.heroId = `${adventure.hero_id}`
         
             if (adventureBTN.heroId === this.hero) {
