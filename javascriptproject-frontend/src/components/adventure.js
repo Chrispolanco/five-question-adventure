@@ -27,6 +27,21 @@ class Adventure {
         this.background_music_correct = adventureJson.background_music_correct;
         this.phrase_correct = adventureJson.phrase_correct;
         this.hero_id = adventureJson.hero_id; 
+        this.q1_c1 = adventureJson.q1_c1; 
+        this.q1_c2 = adventureJson.q1_c2; 
+        this.q1_c3 = adventureJson.q1_c3; 
+        this.q2_c1 = adventureJson.q2_c1; 
+        this.q2_c2 = adventureJson.q2_c2; 
+        this.q2_c3 = adventureJson.q2_c3; 
+        this.q3_c1 = adventureJson.q3_c1; 
+        this.q3_c2 = adventureJson.q3_c2; 
+        this.q3_c3 = adventureJson.q3_c3; 
+        this.q4_c1 = adventureJson.q4_c1; 
+        this.q4_c2 = adventureJson.q4_c2; 
+        this.q4_c3 = adventureJson.q4_c3; 
+        this.q5_c1 = adventureJson.q5_c1; 
+        this.q5_c2 = adventureJson.q5_c2; 
+        this.q5_c3 = adventureJson.q5_c3; 
     }; 
 
 }
