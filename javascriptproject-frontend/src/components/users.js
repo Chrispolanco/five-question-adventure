@@ -229,10 +229,11 @@ class Users {
         firstChoice.innerText = this.adventure.q1_c1;
         const secondChoice = document.createElement('Button');
         secondChoice.className = "buttons";
-        secondChoice.innerText = this.adventure.q1_c1;
+        secondChoice.innerText = this.adventure.q1_c2;
         const thirdChoice = document.createElement('Button');
         thirdChoice.className = "buttons";
-        thirdChoice.innerText = this.adventure.q1_c1;
+        thirdChoice.innerText = this.adventure.q1_c3;
+
 /*
         const fourthChoice = document.createElement('Button');
         fourthChoice.className = "buttons";
@@ -242,8 +243,15 @@ class Users {
         wrapper_questions.appendChild(firstChoice);
         wrapper_questions.appendChild(secondChoice);
         wrapper_questions.appendChild(thirdChoice);
-        wrapper_questions.appendChild(fourthChoice);
 
+        wrapper_questions.addEventListener('click', (e)=> {
+            e.preventDefault(); 
+            if(e.target.innerText === this.adventure.answer_1) {
+            this.topInnerText.innerText = "correct"
+            } else {
+            this.topInnerText.innerText = "incorrect"
+            }
+        })
     };
 
 
