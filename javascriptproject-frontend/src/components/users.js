@@ -155,11 +155,13 @@ class Users {
             adventureBTN.className = "buttonHeros"
             adventureBTN.innerText = `${adventure.story}`
             adventureBTN.heroId = `${adventure.hero_id}`
+            adventureBTN.id = `${adventure.id}`
         
             if (adventureBTN.heroId === this.hero) {
                 this.topInnerText.appendChild(adventureBTN);
             }   
-        })  
+        })
+        
     };
 
 /*

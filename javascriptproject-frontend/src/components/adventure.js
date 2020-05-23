@@ -42,6 +42,7 @@ class Adventure {
         this.q5_c1 = adventureJson.q5_c1; 
         this.q5_c2 = adventureJson.q5_c2; 
         this.q5_c3 = adventureJson.q5_c3; 
+        this.id = adventureJson.id; 
     }; 
 
 }
