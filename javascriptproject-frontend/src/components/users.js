@@ -153,32 +153,72 @@ class Users {
         this.adventures.forEach(adventure => {
             const adventureBTN = document.createElement('button');
             adventureBTN.className = "buttonHeros"
-            adventureBTN.innerText = `${adventure.story}`
-            adventureBTN.heroId = `${adventure.hero_id}`
-            adventureBTN.id = `${adventure.id}`
+
+            adventureBTN.id = `${adventure.id}`; 
+            adventureBTN.adventure_number = `${adventure.adventure_number}`; 
+            adventureBTN.story = `${adventure.story}`; 
+            adventureBTN.questions_1 = `${adventure.questions_1}`; 
+            adventureBTN.questions_2 = `${adventure.questions_2}`; 
+            adventureBTN.questions_3 = `${adventure.questions_3}`; 
+            adventureBTN.questions_4 = `${adventure.questions_4}`; 
+            adventureBTN.questions_5 =`${adventure.questions_5}`; 
+            adventureBTN.answer_1 = `${adventure.answer_1}`; 
+            adventureBTN.answer_2 = `${adventure.answer_2}`; 
+            adventureBTN.answer_3 = `${adventure.answer_3}`;
+            adventureBTN.answer_4 = `${adventure.answer_4}`;
+            adventureBTN.answer_5 = `${adventure.answer_5}`;
+            adventureBTN.background_image_questions_1_to_4 = `${adventure.background_image_questions_1_to_4}`;
+            adventureBTN.background_music_1_4 = `${adventure.background_music_1_4}`;
+            adventureBTN.background_image_question_5 = `${adventure.background_image_question_5}`;
+            adventureBTN.background_music_5 = `${adventure.background_music_5}`;
+            adventureBTN.background_image_won = `${adventure.background_image_won}`;
+            adventureBTN.background_music_won = `${adventure.background_music_won}`;
+            adventureBTN.background_image_loss = `${adventure.background_image_loss}`;
+            adventureBTN.background_music_loss = `${adventure.background_music_loss}`;
+            adventureBTN.background_image_incorrect = `${adventure.background_image_incorrect}`;
+            adventureBTN.background_music_incorrect = `${adventure.background_music_incorrect}`;
+            adventureBTN.phrase_incorrect = `${adventure.phrase_incorrect}`;
+            adventureBTN.background_image_correct = `${adventure.background_image_correct}`;
+            adventureBTN.background_music_correct = `${adventure.background_music_correct}`;
+            adventureBTN.phrase_correct = `${adventure.phrase_correct}`;
+            adventureBTN.q1_c1 = `${adventure.q1_c1}`; 
+            adventureBTN.q1_c2 = `${adventure.q1_c2}`; 
+            adventureBTN.q1_c3 = `${adventure.q1_c3}`; 
+            adventureBTN.q2_c1 = `${adventure.q2_c1}`; 
+            adventureBTN.q2_c2 = `${adventure.q2_c2}`; 
+            adventureBTN.q2_c3 = `${adventure.q2_c3}`; 
+            adventureBTN.q3_c1 = `${adventure.q3_c1}`; 
+            adventureBTN.q3_c2 = `${adventure.q3_c2}`; 
+            adventureBTN.q3_c3 = `${adventure.q3_c3}`; 
+            adventureBTN.q4_c1 = `${adventure.q4_c1}`; 
+            adventureBTN.q4_c2 = `${adventure.q4_c2}`; 
+            adventureBTN.q4_c3 = `${adventure.q4_c3}`; 
+            adventureBTN.q5_c1 = `${adventure.q5_c1}`; 
+            adventureBTN.q5_c2 = `${adventure.q5_c2}`; 
+            adventureBTN.q5_c3 = `${adventure.q5_c3}`; 
+            adventureBTN.hero_id = `${adventure.hero_id}`; 
+            adventureBTN.innerText = `${adventure.story}`; 
         
-            if (adventureBTN.heroId === this.hero) {
+            if (adventureBTN.hero_id === this.hero) {
                 this.topInnerText.appendChild(adventureBTN);
             }   
+            
+            adventureBTN.addEventListener('click', (e)=> {
+                e.preventDefault(); 
+                this.adventure =  adventureBTN; 
+                this.first_question(); 
+            })
+
         })
-        
     };
-
-/*
-    heroInfo.addEventListener('click', (e) => {
-        e.preventDefault();
-        this.topInnerText.innerText = `${heroInfo.innerText}, ` + "which adventure calls you?"
-        this.hero = heroInfo.id;
-        this.fetchAndLoadAdventures(); 
-*/ 
-
 
 
     first_question() {
+        this.topInnerText.innerText = ""
         const questions = document.createElement('div');
         questions.className = "questions";
-        questions.innerText = "You have the a choice for your type of tranportation what is your choice";
-        startScreen.appendChild(questions);
+        questions.innerText = this.adventure.story;
+        this.topInnerText.appendChild(questions);
 
         const wrapper_questions = document.createElement('div');
         wrapper_questions.className = "wrapper_questions";
@@ -186,16 +226,18 @@ class Users {
 
         const firstChoice = document.createElement('Button');
         firstChoice.className = "buttons";
-        firstChoice.innerText = "First";
+        firstChoice.innerText = this.adventure.q1_c1;
         const secondChoice = document.createElement('Button');
         secondChoice.className = "buttons";
-        secondChoice.innerText = "second";
+        secondChoice.innerText = this.adventure.q1_c1;
         const thirdChoice = document.createElement('Button');
         thirdChoice.className = "buttons";
-        thirdChoice.innerText = "third";
+        thirdChoice.innerText = this.adventure.q1_c1;
+/*
         const fourthChoice = document.createElement('Button');
         fourthChoice.className = "buttons";
         fourthChoice.innerText = "fourth"
+*/ 
 
         wrapper_questions.appendChild(firstChoice);
         wrapper_questions.appendChild(secondChoice);

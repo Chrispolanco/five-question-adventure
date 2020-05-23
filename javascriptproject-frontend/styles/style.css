@@ -160,23 +160,24 @@ nav li:hover {
 }
 
 .wrapper_questions{
-  padding-top: 60px;
+  padding-top: 20px;
 }
 
 .questions {
   text-align: center; 
   font-family: 'Rouge Script', cursive; 
   color: white;
-  font-size: 40px;
-  padding-top: 40px;
+  font-size: 50px;
+  padding-top: 10px;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
 }
 
 .buttons {
   display: block;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 2.5;
-  background-color: lightseagreen;
+  background-color: rgb(25, 141, 135);
   text-align: center;
   margin: auto; 
   color: black;
@@ -185,6 +186,8 @@ nav li:hover {
   overflow: hidden;
   opacity: .75;
   border-radius: 8px;
+  -webkit-text-stroke: none;
+
 }
 
 .buttons:hover {
@@ -210,7 +213,7 @@ nav li:hover {
   font-family: 'Rouge Script', cursive; 
   font-weight: bold;
   letter-spacing: -1px;
-  -webkit-text-stroke: 1px rgb(141, 220, 251);
+  -webkit-text-stroke: .5px rgb(15, 69, 90);
   margin-bottom: 5px;
 }
 
