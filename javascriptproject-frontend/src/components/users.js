@@ -197,7 +197,8 @@ class Users {
             adventureInfo.q5_c2 = `${adventure.q5_c2}`; 
             adventureInfo.q5_c3 = `${adventure.q5_c3}`; 
             adventureInfo.hero_id = `${adventure.hero_id}`; 
-            adventureInfo.innerText = `${adventure.story}`; 
+
+            adventureInfo.innerText = `${adventure.adventure_number}`; 
         
             if (adventureInfo.hero_id === this.hero) {
                 this.topInnerText.appendChild(adventureInfo)
@@ -206,15 +207,21 @@ class Users {
             adventureInfo.addEventListener('click', (e)=> {
                 e.preventDefault();  
                 this.adventureInfo = adventureInfo
-                this.first_question(); 
+                this.storyInfo(); 
             })
 
         })
     };
 
 
-    first_question() {
+    storyInfo() {
         this.topInnerText.innerText = this.adventureInfo.story;
+        setTimeout(this.first_question.bind(this), 3000);
+    }
+
+
+    first_question() {
+        this.topInnerText.innerText = this.adventureInfo.questions_1;
         this.topInnerText.className = "questions";
 
         this.wrapper_questions = document.createElement('div');
@@ -238,7 +245,7 @@ class Users {
         this.wrapper_questions.addEventListener('click', (e)=> {
             e.preventDefault(); 
             if(e.target.innerText === this.adventureInfo.answer_1) {
-                this.second_question(); 
+                this.correctChoiceOne(); 
             } else {
                 this.wrongChoiceOne();
             }
@@ -265,7 +272,7 @@ class Users {
         this.wrapper_questions.addEventListener('click', (e)=> {
             e.preventDefault(); 
             if(e.target.innerText === this.adventureInfo.answer_2) {
-                this.third_question(); 
+                this.correctChoiceTwo(); 
             } else {
                 this.wrongChoiceTwo();
             }
@@ -291,7 +298,7 @@ class Users {
         this.wrapper_questions.addEventListener('click', (e)=> {
             e.preventDefault(); 
             if(e.target.innerText === this.adventureInfo.answer_3) {
-                this.fourth_question(); 
+                this.correctChoiceThree(); 
             } else {
                 this.wrongChoiceThree();
             }
@@ -317,7 +324,7 @@ class Users {
         this.wrapper_questions.addEventListener('click', (e)=> {
             e.preventDefault(); 
             if(e.target.innerText === this.adventureInfo.answer_4) {
-                this.fifth_question(); 
+                this.correctChoiceFour(); 
             } else {
                 this.wrongChoiceFour();
             }
@@ -343,7 +350,7 @@ class Users {
         this.wrapper_questions.addEventListener('click', (e)=> {
             e.preventDefault(); 
             if(e.target.innerText === this.adventureInfo.answer_5) {
-                this.second_question(); 
+                this.correctChoiceFive(); 
             } else {
                 this.wrongChoiceFive();
             }
@@ -374,6 +381,31 @@ class Users {
     wrongChoiceFive() {
         this.topInnerText.innerText = "Wrong Answer";  
         setTimeout(this.fifth_question.bind(this), 3000);
+    }; 
+
+    correctChoiceOne() {
+        this.topInnerText.innerText = "Right Answer";  
+        setTimeout(this.second_question.bind(this), 3000);
+    }; 
+
+    correctChoiceTwo() {
+        this.topInnerText.innerText = "Right Answer";  
+        setTimeout(this.third_question.bind(this), 3000);
+    }; 
+
+    correctChoiceThree() {
+        this.topInnerText.innerText = "Right Answer";  
+        setTimeout(this.fourth_question.bind(this), 3000);
+    }; 
+
+    correctChoiceFour() {
+        this.topInnerText.innerText = "Right Answer";  
+        setTimeout(this.fifth_question.bind(this), 3000);
+    }; 
+
+    correctChoiceFive() {
+        this.topInnerText.innerText = "Right Answer";  
+        setTimeout(this.renderHeros().bind(this), 3000);
     }; 
 }
 
