@@ -23,7 +23,7 @@ class Users {
         this.redBtn = document.querySelector('#toggle-red');
         this.redBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            document.body.style.backgroundImage = "url('./images/2.jpg')";
+            document.body.style.backgroundImage = "url('./images/Landscape/4.png')";
         })
     }
 
