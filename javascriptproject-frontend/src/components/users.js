@@ -215,6 +215,7 @@ class Users {
 
 
     storyInfo() {
+        document.body.style.backgroundImage = this.adventureInfo.background_image_questions_1_to_4;
         this.topInnerText.innerText = this.adventureInfo.story;
         setTimeout(this.first_question.bind(this), 3000);
     }

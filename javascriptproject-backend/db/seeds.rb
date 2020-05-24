@@ -15,7 +15,7 @@ Adventure.create([
     {adventure_number: 1, story: "First Story for Hero 1", questions_1: "Q1-H1A1", questions_2: "Q2-H1A1", questions_3: "Q3-H1A1", questions_4: "Q4-H1A1", questions_5: "Q5-H1A1", answer_1: "A1",
     q1_c1: "A1", q1_c2: "choice 2", q1_c3: "choice 3", q2_c1: "A2", q2_c2: "choice 2", q2_c3: "choice 3", q3_c1: "A3", q3_c2: "choice 2", q3_c3: "choice 3",
     q4_c1: "A4", q4_c2: "choice 2", q4_c3: "choice 3", q5_c1: "A5", q5_c2: "choice 2", q5_c3: "choice 3",
-    answer_2: "A2", answer_3: "A3", answer_4: "A4", answer_5: "A5", background_image_questions_1_to_4: "backgroun 1-4", background_music_1_4: "background music 1-4", 
+    answer_2: "A2", answer_3: "A3", answer_4: "A4", answer_5: "A5", background_image_questions_1_to_4: "url('./images/Landscape/4.png')", background_music_1_4: "background music 1-4", 
     background_image_question_5: "backgroung 5", background_music_5: "background 5", background_image_won: "background won", background_music_won: "background music won", 
     background_image_loss: "background loss", background_music_loss: "background music loss", background_image_incorrect: "background incorrect", 
     background_music_incorrect: "background music incorrect", phrase_incorrect: "phrases incorrect", background_image_correct: "background correct", 
