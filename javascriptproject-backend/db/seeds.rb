@@ -17,7 +17,7 @@ Adventure.create([
     q4_c1: "A4", q4_c2: "choice 2", q4_c3: "choice 3", q5_c1: "A5", q5_c2: "choice 2", q5_c3: "choice 3",
     answer_2: "A2", answer_3: "A3", answer_4: "A4", answer_5: "A5", background_image_questions_1_to_4: "url('./images/Hero_1/9.png')", background_music_1_4: "background music 1-4", 
     background_image_question_5: "url('./images/Hero_1/8.png')", background_music_5: "background 5", background_image_won: "background won", background_music_won: "background music won", 
-    background_image_loss: "background loss", background_music_loss: "background music loss", background_image_incorrect: "background incorrect", 
+    background_image_loss: "url('./images/Landscape/4.png')", background_music_loss: "background music loss", background_image_incorrect: "background incorrect", 
     background_music_incorrect: "background music incorrect", phrase_incorrect: "phrases incorrect", background_image_correct: "background correct", 
     background_music_correct: "background music correct", phrase_correct: "phrase correct", hero_id: 1}, 
 
@@ -26,7 +26,7 @@ Adventure.create([
     q4_c1: "A4", q4_c2: "choice 2", q4_c3: "choice 3", q5_c1: "A5", q5_c2: "choice 2", q5_c3: "choice 3",
     answer_2: "A2", answer_3: "A3", answer_4: "A4", answer_5: "A5", background_image_questions_1_to_4: "url('./images/Hero_2/5.png')", background_music_1_4: "background music 1-4", 
     background_image_question_5: "url('./images/Hero_2/4.png')", background_music_5: "background 5", background_image_won: "background won", background_music_won: "background music won", 
-    background_image_loss: "background loss", background_music_loss: "background music loss", background_image_incorrect: "background incorrect", 
+    background_image_loss: "url('./images/Landscape/4.png')", background_music_loss: "background music loss", background_image_incorrect: "background incorrect", 
     background_music_incorrect: "background music incorrect", phrase_incorrect: "phrases incorrect", background_image_correct: "background correct", 
     background_music_correct: "background music correct", phrase_correct: "phrase correct", hero_id: 1}, 
     
@@ -35,7 +35,7 @@ Adventure.create([
     q4_c1: "A4", q4_c2: "choice 2", q4_c3: "choice 3", q5_c1: "A5", q5_c2: "choice 2", q5_c3: "choice 3",
     answer_2: "A2", answer_3: "A3", answer_4: "A4", answer_5: "A5", background_image_questions_1_to_4: "url('./images/Hero_3/1.png')", background_music_1_4: "background music 1-4", 
     background_image_question_5: "url('./images/Hero_3/3.png')", background_music_5: "background 5", background_image_won: "background won", background_music_won: "background music won", 
-    background_image_loss: "background loss", background_music_loss: "background music loss", background_image_incorrect: "background incorrect", 
+    background_image_loss: "url('./images/Landscape/4.png')", background_music_loss: "background music loss", background_image_incorrect: "background incorrect", 
     background_music_incorrect: "background music incorrect", phrase_incorrect: "phrases incorrect", background_image_correct: "background correct", 
     background_music_correct: "background music correct", phrase_correct: "phrase correct", hero_id: 2}, 
 
@@ -44,7 +44,7 @@ Adventure.create([
     q4_c1: "A4", q4_c2: "choice 2", q4_c3: "choice 3", q5_c1: "A5", q5_c2: "choice 2", q5_c3: "choice 3",
     answer_2: "A2", answer_3: "A3", answer_4: "A4", answer_5: "A5", background_image_questions_1_to_4: "url('./images/Hero_4/3.png')", background_music_1_4: "background music 1-4", 
     background_image_question_5: "url('./images/Hero_4/2.png')", background_music_5: "background 5", background_image_won: "background won", background_music_won: "background music won", 
-    background_image_loss: "background loss", background_music_loss: "background music loss", background_image_incorrect: "background incorrect", 
+    background_image_loss: "url('./images/Landscape/4.png')", background_music_loss: "background music loss", background_image_incorrect: "background incorrect", 
     background_music_incorrect: "background music incorrect", phrase_incorrect: "phrases incorrect", background_image_correct: "background correct", 
     background_music_correct: "background music correct", phrase_correct: "phrase correct", hero_id: 2}
 ]); 

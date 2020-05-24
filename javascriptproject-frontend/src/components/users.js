@@ -222,6 +222,9 @@ class Users {
 
 
     first_question() {
+        document.querySelector("div.box").style.display = "block"
+        document.querySelector("#header").innerText = "Mini Question Adventure"
+        document.body.style.backgroundImage = this.adventureInfo.background_image_questions_1_to_4;
         this.topInnerText.innerText = this.adventureInfo.questions_1;
         this.topInnerText.className = "questions";
 
@@ -255,7 +258,9 @@ class Users {
 
 
     second_question() {
-
+        document.querySelector("div.box").style.display = "block"
+        document.querySelector("#header").innerText = "Mini Question Adventure"
+        document.body.style.backgroundImage = this.adventureInfo.background_image_questions_1_to_4;
         this.topInnerText.innerText = this.adventureInfo.questions_2;
 
         this.wrapper_questions = document.createElement('div');
@@ -281,7 +286,9 @@ class Users {
     };
 
     third_question() {
-
+        document.querySelector("div.box").style.display = "block"
+        document.querySelector("#header").innerText = "Mini Question Adventure"
+        document.body.style.backgroundImage = this.adventureInfo.background_image_questions_1_to_4;
         this.topInnerText.innerText = this.adventureInfo.questions_3;
 
         this.wrapper_questions = document.createElement('div');
@@ -307,7 +314,9 @@ class Users {
     };
     
     fourth_question() {
-
+        document.querySelector("div.box").style.display = "block"
+        document.querySelector("#header").innerText = "Mini Question Adventure"
+        document.body.style.backgroundImage = this.adventureInfo.background_image_questions_1_to_4;
         this.topInnerText.innerText = this.adventureInfo.questions_4;
 
         this.wrapper_questions = document.createElement('div');
@@ -333,7 +342,8 @@ class Users {
     };
 
     fifth_question() {
-
+        document.querySelector("div.box").style.display = "block"
+        document.querySelector("#header").innerText = "Mini Question Adventure"
         document.body.style.backgroundImage = this.adventureInfo.background_image_question_5;
         this.topInnerText.innerText = this.adventureInfo.questions_5;
 
@@ -361,52 +371,72 @@ class Users {
 
 
     wrongChoiceOne() {
-        this.topInnerText.innerText = "Wrong Answer";  
+        document.body.style.backgroundImage = this.adventureInfo.background_image_loss;
+        document.querySelector("div.box").style.display = "none"
+        document.querySelector("#header").innerText = "One more chance hero";   
+
         setTimeout(this.first_question.bind(this), 3000);
     }; 
 
     wrongChoiceTwo() {
-        this.topInnerText.innerText = "Wrong Answer";  
+        document.body.style.backgroundImage = this.adventureInfo.background_image_loss;
+        document.querySelector("div.box").style.display = "none"
+        document.querySelector("#header").innerText = "One more chance hero"; 
+
         setTimeout(this.second_question.bind(this), 3000);
     }; 
 
     wrongChoiceThree() {
-        this.topInnerText.innerText = "Wrong Answer";  
+        document.body.style.backgroundImage = this.adventureInfo.background_image_loss;
+        document.querySelector("div.box").style.display = "none"
+        document.querySelector("#header").innerText = "One more chance hero"; 
+
         setTimeout(this.third_question.bind(this), 3000);
     }; 
 
     wrongChoiceFour() {
-        this.topInnerText.innerText = "Wrong Answer";  
+        document.body.style.backgroundImage = this.adventureInfo.background_image_loss;
+        document.querySelector("div.box").style.display = "none"
+        document.querySelector("#header").innerText = "One more chance hero"; 
+
         setTimeout(this.fourth_question.bind(this), 3000);
     }; 
 
     wrongChoiceFive() {
-        this.topInnerText.innerText = "Wrong Answer";  
+        document.body.style.backgroundImage = this.adventureInfo.background_image_loss;
+        document.querySelector("div.box").style.display = "none"
+        document.querySelector("#header").innerText = "One more chance hero";  
+
         setTimeout(this.fifth_question.bind(this), 3000);
     }; 
 
     correctChoiceOne() {
-        this.topInnerText.innerText = "Right Answer";  
+        document.querySelector("#header").innerText = "You're one more step to Victory!!"; 
+        document.querySelector("div.box").style.display = "none" 
         setTimeout(this.second_question.bind(this), 3000);
     }; 
 
     correctChoiceTwo() {
-        this.topInnerText.innerText = "Right Answer";  
+        document.querySelector("#header").innerText = "You're one more step to Victory!!";   
+        document.querySelector("div.box").style.display = "none"
         setTimeout(this.third_question.bind(this), 3000);
     }; 
 
     correctChoiceThree() {
-        this.topInnerText.innerText = "Right Answer";  
+        document.querySelector("#header").innerText = "You're one more step to Victory!!";  
+        document.querySelector("div.box").style.display = "none" 
         setTimeout(this.fourth_question.bind(this), 3000);
     }; 
 
     correctChoiceFour() {
-        this.topInnerText.innerText = "Right Answer";  
+        document.querySelector("#header").innerText = "You're one more step to Victory!!";  
+        document.querySelector("div.box").style.display = "none"
         setTimeout(this.fifth_question.bind(this), 3000);
     }; 
 
     correctChoiceFive() {
-        this.topInnerText.innerText = "Right Answer";  
+        document.querySelector("#header").innerText = "You're one more step to Victory!!";   
+        document.querySelector("div.box").style.display = "none"
         setTimeout(this.renderHeros().bind(this), 3000);
     }; 
 }

@@ -7,6 +7,7 @@ body {
 }
 
 #header{
+  display: block; 
   background: transparent; 
   background-image: none;
   color: #d54d7b; 
@@ -67,6 +68,7 @@ nav li:hover {
 }
 
 .box {
+  display: block; 
   width: 1200px;
   height: 500px;
   border: 20px solid darkgreen;
