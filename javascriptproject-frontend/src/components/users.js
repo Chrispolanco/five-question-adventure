@@ -334,6 +334,7 @@ class Users {
 
     fifth_question() {
 
+        document.body.style.backgroundImage = this.adventureInfo.background_image_question_5;
         this.topInnerText.innerText = this.adventureInfo.questions_5;
 
         this.wrapper_questions = document.createElement('div');
