@@ -240,7 +240,7 @@ class Users {
             if(e.target.innerText === this.adventureInfo.answer_1) {
                 this.second_question(); 
             } else {
-            this.topInnerText.innerText = "incorrect"
+                this.wrongChoiceOne();
             }
         })
      };
@@ -264,17 +264,117 @@ class Users {
 
         this.wrapper_questions.addEventListener('click', (e)=> {
             e.preventDefault(); 
-            if(e.target.innerText === this.adventure.answer_2) {
-                this.second_question(); 
+            if(e.target.innerText === this.adventureInfo.answer_2) {
+                this.third_question(); 
             } else {
-            this.topInnerText.innerText = "incorrect"
+                this.wrongChoiceTwo();
             }
         })
     };
 
+    third_question() {
+
+        this.topInnerText.innerText = this.adventureInfo.questions_3;
+
+        this.wrapper_questions = document.createElement('div');
+        this.wrapper_questions.className = "wrapper_questions";
+        this.topInnerText.appendChild(this.wrapper_questions);
+
+        this.firstChoice.innerText = this.adventureInfo.q3_c1;
+        this.secondChoice.innerText = this.adventureInfo.q3_c2;
+        this.thirdChoice.innerText = this.adventureInfo.q3_c3;
+
+        this.wrapper_questions.appendChild(this.firstChoice);
+        this.wrapper_questions.appendChild(this.secondChoice);
+        this.wrapper_questions.appendChild(this.thirdChoice);
+
+        this.wrapper_questions.addEventListener('click', (e)=> {
+            e.preventDefault(); 
+            if(e.target.innerText === this.adventureInfo.answer_3) {
+                this.fourth_question(); 
+            } else {
+                this.wrongChoiceThree();
+            }
+        })
+    };
     
+    fourth_question() {
+
+        this.topInnerText.innerText = this.adventureInfo.questions_4;
+
+        this.wrapper_questions = document.createElement('div');
+        this.wrapper_questions.className = "wrapper_questions";
+        this.topInnerText.appendChild(this.wrapper_questions);
+
+        this.firstChoice.innerText = this.adventureInfo.q4_c1;
+        this.secondChoice.innerText = this.adventureInfo.q4_c2;
+        this.thirdChoice.innerText = this.adventureInfo.q4_c3;
+
+        this.wrapper_questions.appendChild(this.firstChoice);
+        this.wrapper_questions.appendChild(this.secondChoice);
+        this.wrapper_questions.appendChild(this.thirdChoice);
+
+        this.wrapper_questions.addEventListener('click', (e)=> {
+            e.preventDefault(); 
+            if(e.target.innerText === this.adventureInfo.answer_4) {
+                this.fifth_question(); 
+            } else {
+                this.wrongChoiceFour();
+            }
+        })
+    };
+
+    fifth_question() {
+
+        this.topInnerText.innerText = this.adventureInfo.questions_5;
+
+        this.wrapper_questions = document.createElement('div');
+        this.wrapper_questions.className = "wrapper_questions";
+        this.topInnerText.appendChild(this.wrapper_questions);
+
+        this.firstChoice.innerText = this.adventureInfo.q5_c1;
+        this.secondChoice.innerText = this.adventureInfo.q5_c2;
+        this.thirdChoice.innerText = this.adventureInfo.q5_c3;
+
+        this.wrapper_questions.appendChild(this.firstChoice);
+        this.wrapper_questions.appendChild(this.secondChoice);
+        this.wrapper_questions.appendChild(this.thirdChoice);
+
+        this.wrapper_questions.addEventListener('click', (e)=> {
+            e.preventDefault(); 
+            if(e.target.innerText === this.adventureInfo.answer_5) {
+                this.second_question(); 
+            } else {
+                this.wrongChoiceFive();
+            }
+        })
+    };
 
 
+    wrongChoiceOne() {
+        this.topInnerText.innerText = "Wrong Answer";  
+        setTimeout(this.first_question.bind(this), 3000);
+    }; 
+
+    wrongChoiceTwo() {
+        this.topInnerText.innerText = "Wrong Answer";  
+        setTimeout(this.second_question.bind(this), 3000);
+    }; 
+
+    wrongChoiceThree() {
+        this.topInnerText.innerText = "Wrong Answer";  
+        setTimeout(this.third_question.bind(this), 3000);
+    }; 
+
+    wrongChoiceFour() {
+        this.topInnerText.innerText = "Wrong Answer";  
+        setTimeout(this.fourth_question.bind(this), 3000);
+    }; 
+
+    wrongChoiceFive() {
+        this.topInnerText.innerText = "Wrong Answer";  
+        setTimeout(this.fifth_question.bind(this), 3000);
+    }; 
 }
 
 
