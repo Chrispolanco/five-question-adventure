@@ -101,14 +101,24 @@ class Users {
 
         this.users.forEach(user => {
             const userInfo = document.createElement('button');
+            const userStatus_1 = document.createElement('div');
+            
+            userStatus_1.className = "test"
+
+            userStatus_1.adventure_2 = `${user.won_adventure_2}`
+            if (userStatus_1.adventure_2 === "true") {
+                userStatus_1.innerText = "Adventure 2 conqured"
+            }
+
             userInfo.className = "buttonUsers"
             userInfo.innerText = `${user.name}`
             userInfo.id = `${user.id}`
-            userInfo.won_adventure_1 = `${user.won_adventure_1}`
             userInfo.won_adventure_2 = `${user.won_adventure_2}`
             userInfo.won_adventure_3 = `${user.won_adventure_3}`
             userInfo.won_adventure_4 = `${user.won_adventure_4}`
+
             this.topInnerText.appendChild(userInfo);
+            userInfo.appendChild(userStatus_1); 
 
             userInfo.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -212,12 +222,11 @@ class Users {
             adventureInfo.hero_id = `${adventure.hero_id}`; 
 
             adventureInfo.innerText = `${adventure.adventure_number}`; 
-        
             
             if (adventureInfo.hero_id === this.hero) {
-                this.topInnerText.innerText = this.user.won_adventure_2 
-            }; 
-
+                this.topInnerText.appendChild(adventureInfo)
+            }
+    
 
             
             adventureInfo.addEventListener('click', (e)=> {
