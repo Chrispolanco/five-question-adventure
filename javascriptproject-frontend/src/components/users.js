@@ -91,20 +91,33 @@ class Users {
     renderUsers() {
         this.topInnerText.classList.toggle("selectUser");
         this.topInnerText.innerText = "Which Brave Hero Might You Be?"
+        
+
+/*
+        this.table = document.createElement("table"); 
+        this.table.className = "wonTable"; 
+        this.table.innerText = "test"
+*/
 
         this.users.forEach(user => {
-            this.userInfo = document.createElement('button');
-            this.userInfo.className = "buttonUsers"
-            this.userInfo.innerText = `${user.name}`
-            this.userInfo.id = `${user.id}`
-            this.topInnerText.appendChild(this.userInfo);
+            const userInfo = document.createElement('button');
+            userInfo.className = "buttonUsers"
+            userInfo.innerText = `${user.name}`
+            userInfo.id = `${user.id}`
+            userInfo.won_adventure_1 = `${user.won_adventure_1}`
+            userInfo.won_adventure_2 = `${user.won_adventure_2}`
+            userInfo.won_adventure_3 = `${user.won_adventure_3}`
+            userInfo.won_adventure_4 = `${user.won_adventure_4}`
+            this.topInnerText.appendChild(userInfo);
 
-            this.userInfo.addEventListener('click', (e) => {
+            userInfo.addEventListener('click', (e) => {
                 e.preventDefault();
                 this.topInnerText.innerText = "Hello" + ` ${user.name} ` + "- Select your Hero"
+                this.user = userInfo; 
                 this.fetchAndLoadHeros();
+
             })
-        })
+        }) 
     };
 
     fetchAndLoadHeros() {
@@ -200,9 +213,12 @@ class Users {
 
             adventureInfo.innerText = `${adventure.adventure_number}`; 
         
+            
             if (adventureInfo.hero_id === this.hero) {
-                this.topInnerText.appendChild(adventureInfo)
+                this.topInnerText.innerText = this.user.won_adventure_2 
             }; 
+
+
             
             adventureInfo.addEventListener('click', (e)=> {
                 e.preventDefault();  
@@ -213,13 +229,11 @@ class Users {
         })
     };
 
-
     storyInfo() {
         document.body.style.backgroundImage = this.adventureInfo.background_image_questions_1_to_4;
         this.topInnerText.innerText = this.adventureInfo.story;
-        setTimeout(this.first_question.bind(this), 3000);
+        setTimeout(this.first_question.bind(this), 1000);
     }
-
 
     first_question() {
         document.querySelector("div.box").style.display = "block"
@@ -251,7 +265,7 @@ class Users {
             if(e.target.innerText === this.adventureInfo.answer_1) {
                 this.correctChoiceOne(); 
             } else {
-                this.wrongChoiceOne();
+                this.loss();
             }
         })
      };
@@ -439,6 +453,16 @@ class Users {
         document.querySelector("div.box").style.display = "none"
         setTimeout(this.renderHeros().bind(this), 3000);
     }; 
+
+    loss() {
+        document.querySelector("div.box").style.display = "none"
+        document.body.style.backgroundImage = "none";
+        document.querySelector("#header").innerText = "FIN";   
+        document.body.style.backgroundColor = "black";
+
+        setTimeout(this.storyInfo.bind(this), 1000);
+
+    }
 }
 
 

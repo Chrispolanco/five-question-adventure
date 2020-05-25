@@ -50,8 +50,8 @@ Adventure.create([
 ]); 
 
 User.create([
-    {name: "Zelda", password_digest: "Zeldas Password", username: "Zelda", won_adventure_1: "FALSE", won_adventure_2: "FALSE", won_adventure_3: "FALSE", won_adventure_4: "FALSE"}, 
-    {name: "Tifa", password_digest: "Tifas Password", username: "Tifa", won_adventure_1: "FALSE", won_adventure_2: "FALSE", won_adventure_3: "FALSE", won_adventure_4: "FALSE"}, 
-    {name: "Aerith", password_digest: "Aeriths Passowrd", username: "Aerith", won_adventure_1: "FALSE", won_adventure_2: "FALSE", won_adventure_3: "FALSE", won_adventure_4: "FALSE"}
+    {name: "Zelda", password_digest: "Zeldas Password", username: "Zelda", won_adventure_1: "FALSE", won_adventure_2: "TRUE", won_adventure_3: "FALSE", won_adventure_4: "FALSE"}, 
+    {name: "Tifa", password_digest: "Tifas Password", username: "Tifa", won_adventure_1: "FALSE", won_adventure_2: "TRUE", won_adventure_3: "FALSE", won_adventure_4: "FALSE"}, 
+    {name: "Aerith", password_digest: "Aeriths Passowrd", username: "Aerith", won_adventure_1: "FALSE", won_adventure_2: "TRUE", won_adventure_3: "FALSE", won_adventure_4: "FALSE"}
 ]); 
 
