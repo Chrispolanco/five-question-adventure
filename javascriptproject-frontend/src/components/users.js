@@ -72,9 +72,28 @@ class Users {
         this.menu_wrapper.appendChild(this.menu_choice_one);
         this.menu_wrapper.appendChild(this.menu_choice_two);
 
+        this.menu_choice_one.addEventListener('click', this.userSignUp.bind(this)); 
         this.menu_choice_two.addEventListener('click', this.fetchAndLoadUsers.bind(this));
 
     };
+
+    userSignUp() { 
+        document.querySelector(".signUpForm").style.display = "block"
+        this.form = document.querySelector(".signUpForm")
+        this.topInnerText.innerText = "What is your story traveler?";
+        this.topInnerText.appendChild(this.form);
+
+        this.username = document.querySelectorAll("input")[0]
+        this.name = document.querySelectorAll("input")[1]
+
+        const signUpBtn = document.querySelector("#Login"); 
+
+        signUpBtn.addEventListener('click', (e) => {
+            this.topInnerText.innerText = this.username.value
+        })
+
+
+    }
 
 
     fetchAndLoadUsers() {
@@ -91,34 +110,29 @@ class Users {
     renderUsers() {
         this.topInnerText.classList.toggle("selectUser");
         this.topInnerText.innerText = "Which Brave Hero Might You Be?"
-        
-
-/*
-        this.table = document.createElement("table"); 
-        this.table.className = "wonTable"; 
-        this.table.innerText = "test"
-*/
 
         this.users.forEach(user => {
             const userInfo = document.createElement('button');
-            const userStatus_1 = document.createElement('div');
-            
-            userStatus_1.className = "test"
 
+/*            
+            const userStatus_1 = document.createElement('div');
+            userStatus_1.className = "test"
             userStatus_1.adventure_2 = `${user.won_adventure_2}`
             if (userStatus_1.adventure_2 === "true") {
                 userStatus_1.innerText = "Adventure 2 conqured"
             }
+*/ 
 
             userInfo.className = "buttonUsers"
             userInfo.innerText = `${user.name}`
             userInfo.id = `${user.id}`
+            userInfo.won_adventure_1 = `${user.won_adventure_1}`
             userInfo.won_adventure_2 = `${user.won_adventure_2}`
             userInfo.won_adventure_3 = `${user.won_adventure_3}`
             userInfo.won_adventure_4 = `${user.won_adventure_4}`
 
             this.topInnerText.appendChild(userInfo);
-            userInfo.appendChild(userStatus_1); 
+
 
             userInfo.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -274,7 +288,7 @@ class Users {
             if(e.target.innerText === this.adventureInfo.answer_1) {
                 this.correctChoiceOne(); 
             } else {
-                this.loss();
+                this.wrongChoiceOne();
             }
         })
      };
