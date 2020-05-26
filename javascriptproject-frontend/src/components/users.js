@@ -413,23 +413,26 @@ class Users {
     };
 
     updateUser() {
+
         this.userId = this.user.id
         this.number = this.adventureInfo.id
-        if (this.number = 1) {
+
+        if (this.number === "1") {
             this.user.won_adventure_1 = "true"
         }
-        if (this.number = 2) {
+        if (this.number === "2") {
             this.user.won_adventure_2 = "true"
         }
-        if (this.number = 3) {
+        if (this.number === "3") {
             this.user.won_adventure_3 = "true"
         }
-        if (this.number = 4) {
+        if (this.number === "4") {
             this.user.won_adventure_4 = "true"
         }
     this.adapter.editUser(this.userId, this.user)
 
-    this.topInnerText.innerText = "Worked"
+    this.topInnerText.innerText = this.number
+    console.log(this.user.won_adventure_1, this.user.won_adventure_2, this.user.won_adventure_3, this.user.won_adventure_4)
     }
 
 
