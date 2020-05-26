@@ -9,14 +9,13 @@ class UsersAdapter {
         return fetch(this.baseUrl).then(resp => resp.json())
     }
 
-    newUser(username, password_digest, name) {
+    newUser(username, name) {
         const user = {
             username: username, 
-            password_digest: password_digest, 
             name: name
-
         }
-        return fetch(this.base.URL, {
+        console.log('baseURL', this.baseUrl);
+        return fetch(this.baseUrl, {
             method: "POST", 
             headers: {
                 "Content-Type": "application/json", 
@@ -24,21 +23,8 @@ class UsersAdapter {
             }, 
             body: JSON.stringify(user)
         })
-            .then(resp = resp.json())
-    }
-
-    showInfo(id) {
-        let configObj = {
-            method: "GET", 
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            }
-        }
-        return fetch(this.baseUrl + `/$id`, configObj)
             .then(resp => resp.json())
     }
-    
-
+// JSON.stringify(user)
 }
 

@@ -86,13 +86,17 @@ class Users {
         this.username = document.querySelectorAll("input")[0]
         this.name = document.querySelectorAll("input")[1]
 
-        const signUpBtn = document.querySelector("#Login"); 
+        this.signUpBtn = document.querySelector("#Login"); 
 
-        signUpBtn.addEventListener('click', (e) => {
-            this.topInnerText.innerText = this.username.value
-        })
+        this.signUpBtn.addEventListener('click',this.createUser.bind(this))
+    }
 
+    createUser(e) {
+        e.preventDefault(); 
+        const name = this.name.value
+        const username = this.username.value 
 
+        this.adapter.newUser(username, name)
     }
 
 
