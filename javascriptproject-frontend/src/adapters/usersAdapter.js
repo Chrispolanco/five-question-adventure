@@ -14,7 +14,6 @@ class UsersAdapter {
             username: username, 
             name: name
         }
-        console.log('baseURL', this.baseUrl);
         return fetch(this.baseUrl, {
             method: "POST", 
             headers: {
@@ -25,6 +24,24 @@ class UsersAdapter {
         })
             .then(resp => resp.json())
     }
-// JSON.stringify(user)
+
+    editUser(userId, userUpdate) {
+        const user = {
+            won_adventure_1: userUpdate.won_adventure_1, 
+            won_adventure_2: userUpdate.won_adventure_2,
+            won_adventure_3: userUpdate.won_adventure_3,
+            won_adventure_4: userUpdate.won_adventure_4
+        }
+        return fetch(`${this.baseUrl}/${userId}`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify(user)
+        })
+        .then(resp => resp.json())
+    }
+
 }
 

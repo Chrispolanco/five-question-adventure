@@ -97,6 +97,7 @@ class Users {
         const username = this.username.value 
 
         this.adapter.newUser(username, name)
+        this.fetchAndLoadUsers()
     }
 
 
@@ -263,6 +264,7 @@ class Users {
     }
 
     first_question() {
+
         document.querySelector("div.box").style.display = "block"
         document.querySelector("#header").innerText = "Mini Question Adventure"
         document.body.style.backgroundImage = this.adventureInfo.background_image_questions_1_to_4;
@@ -403,12 +405,32 @@ class Users {
         this.wrapper_questions.addEventListener('click', (e)=> {
             e.preventDefault(); 
             if(e.target.innerText === this.adventureInfo.answer_5) {
-                this.correctChoiceFive(); 
+                this.updateUser(this.adventureInfo, this.user) 
             } else {
                 this.wrongChoiceFive();
             }
         })
     };
+
+    updateUser() {
+        this.userId = this.user.id
+        this.number = this.adventureInfo.id
+        if (this.number = 1) {
+            this.user.won_adventure_1 = "true"
+        }
+        if (this.number = 2) {
+            this.user.won_adventure_2 = "true"
+        }
+        if (this.number = 3) {
+            this.user.won_adventure_3 = "true"
+        }
+        if (this.number = 4) {
+            this.user.won_adventure_4 = "true"
+        }
+    this.adapter.editUser(this.userId, this.user)
+
+    this.topInnerText.innerText = "Worked"
+    }
 
 
     wrongChoiceOne() {
@@ -416,7 +438,7 @@ class Users {
         document.querySelector("div.box").style.display = "none"
         document.querySelector("#header").innerText = "One more chance hero";   
 
-        setTimeout(this.first_question.bind(this), 3000);
+        setTimeout(this.first_question.bind(this), 1000);
     }; 
 
     wrongChoiceTwo() {
@@ -424,7 +446,7 @@ class Users {
         document.querySelector("div.box").style.display = "none"
         document.querySelector("#header").innerText = "One more chance hero"; 
 
-        setTimeout(this.second_question.bind(this), 3000);
+        setTimeout(this.second_question.bind(this), 1000);
     }; 
 
     wrongChoiceThree() {
@@ -432,7 +454,7 @@ class Users {
         document.querySelector("div.box").style.display = "none"
         document.querySelector("#header").innerText = "One more chance hero"; 
 
-        setTimeout(this.third_question.bind(this), 3000);
+        setTimeout(this.third_question.bind(this), 1000);
     }; 
 
     wrongChoiceFour() {
@@ -440,7 +462,7 @@ class Users {
         document.querySelector("div.box").style.display = "none"
         document.querySelector("#header").innerText = "One more chance hero"; 
 
-        setTimeout(this.fourth_question.bind(this), 3000);
+        setTimeout(this.fourth_question.bind(this), 1000);
     }; 
 
     wrongChoiceFive() {
@@ -448,37 +470,37 @@ class Users {
         document.querySelector("div.box").style.display = "none"
         document.querySelector("#header").innerText = "One more chance hero";  
 
-        setTimeout(this.fifth_question.bind(this), 3000);
+        setTimeout(this.fifth_question.bind(this), 1000);
     }; 
 
     correctChoiceOne() {
         document.querySelector("#header").innerText = "You're one more step to Victory!!"; 
         document.querySelector("div.box").style.display = "none" 
-        setTimeout(this.second_question.bind(this), 3000);
+        setTimeout(this.second_question.bind(this), 1000);
     }; 
 
     correctChoiceTwo() {
         document.querySelector("#header").innerText = "You're one more step to Victory!!";   
         document.querySelector("div.box").style.display = "none"
-        setTimeout(this.third_question.bind(this), 3000);
+        setTimeout(this.third_question.bind(this), 1000);
     }; 
 
     correctChoiceThree() {
         document.querySelector("#header").innerText = "You're one more step to Victory!!";  
         document.querySelector("div.box").style.display = "none" 
-        setTimeout(this.fourth_question.bind(this), 3000);
+        setTimeout(this.fourth_question.bind(this), 1000);
     }; 
 
     correctChoiceFour() {
         document.querySelector("#header").innerText = "You're one more step to Victory!!";  
         document.querySelector("div.box").style.display = "none"
-        setTimeout(this.fifth_question.bind(this), 3000);
+        setTimeout(this.fifth_question.bind(this), 1000);
     }; 
 
     correctChoiceFive() {
         document.querySelector("#header").innerText = "You're one more step to Victory!!";   
         document.querySelector("div.box").style.display = "none"
-        setTimeout(this.renderHeros().bind(this), 3000);
+        setTimeout(this.renderHeros().bind(this), 1000);
     }; 
 
     loss() {
