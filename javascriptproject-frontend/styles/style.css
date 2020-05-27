@@ -73,7 +73,7 @@ nav li:hover {
   width: 1200px;
   height: 500px;
   border: 20px solid darkgreen;
-  margin-left: 315px;
+  margin-left: 400px;
   margin-top: 0px;
   padding: 0px;
   Background-Image: url('../images/InnerBG/2.jpg');
@@ -238,11 +238,6 @@ nav li:hover {
   margin-top: 40px;
 }
 
-  wonTable {
-    display: "block";
-    font-size: 60px;
-  }
-
 .buttonUsers:hover {
   opacity: 1;
   color: crimson;
@@ -287,11 +282,27 @@ nav li:hover {
   font-weight: bold;
 }
 
-.testOn{
+.nameHeader{
   display:block; 
-  font-size: 10px;
+  font-size: 20px;
+  text-align: center; 
 }
 
-.testOff {
-  display: none;
+
+.statBox {
+  display: block; 
+  border: 20px solid rgb(0, 0, 0);
+  opacity: .85;
+  color: azure;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000; 
+  width: 1200px;
+  border: 20px solid darkgreen;
+  margin-left: 400px;
+  margin-top: 0px;
+  padding: 0px;
+  Background-Image: url('../images/InnerBG/4.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-attachment: scroll; 
+  opacity: .85;
 }

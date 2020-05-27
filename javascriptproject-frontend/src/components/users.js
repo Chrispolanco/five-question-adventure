@@ -20,10 +20,10 @@ class Users {
             }
     */
 
-    stats() {
+/*    stats() {
 
         
-/*        if (document.querySelector(".testOff").style.display = "testoff") {
+       if (document.querySelector(".testOff").style.display = "testoff") {
             document.querySelector(".testOff").style.display 
             this.statBtn.addEventListener('click', (e) => {
                 e.preventDefault(); 
@@ -32,8 +32,9 @@ class Users {
         } else {
             document.querySelector(".testOn").style.display = "block"
         }
-*/ 
+
     }; 
+    */ 
 
     statFetchAndLoadUsers() {
         this.statBtn = document.querySelector("li#stats")
@@ -49,11 +50,14 @@ class Users {
     };
 
     statRenderUsers() {
+        this.statBox = document.querySelector(" div.statBox")
+        this.statBox.className = "statBox"
+
         this.users.forEach(user => {
-            const statUserInfo = document.createElement('h6');
-            statUserInfo.className = "testOn"
+            const statUserInfo = document.createElement('p');
+            statUserInfo.className = "nameHeader"
             statUserInfo.innerText =  `${user.name}`
-            this.statBtn.appendChild(statUserInfo)
+            this.statBox.appendChild(statUserInfo)
 
             const statWonAdventure1 = document.createElement('li');
             statWonAdventure1.className = "testOn"
