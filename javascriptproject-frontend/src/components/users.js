@@ -6,6 +6,7 @@ class Users {
         this.herosAdapter = new HerosAdapter()
         this.adventures = []
         this.adventuresAdapter = new AdventuresAdapter()
+        this.statFetchAndLoadUsers()
         this.changebg()
         this.changemusic()
         this.welcome()
@@ -18,6 +19,81 @@ class Users {
             this.audio.play();      
             }
     */
+
+    stats() {
+
+        
+/*        if (document.querySelector(".testOff").style.display = "testoff") {
+            document.querySelector(".testOff").style.display 
+            this.statBtn.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                this.statFetchAndLoadUsers()
+            }); 
+        } else {
+            document.querySelector(".testOn").style.display = "block"
+        }
+*/ 
+    }; 
+
+    statFetchAndLoadUsers() {
+        this.statBtn = document.querySelector("li#stats")
+
+        this.adapter
+            .getUsers()
+            .then(users => {
+                users.forEach(user => this.users.push(new User(user)))
+            })
+            .then(() => {
+                this.statRenderUsers()
+            })
+    };
+
+    statRenderUsers() {
+        this.users.forEach(user => {
+            const statUserInfo = document.createElement('h6');
+            statUserInfo.className = "testOn"
+            statUserInfo.innerText =  `${user.name}`
+            this.statBtn.appendChild(statUserInfo)
+
+            const statWonAdventure1 = document.createElement('li');
+            statWonAdventure1.className = "testOn"
+            statWonAdventure1.innerText = `${user.won_adventure_1}`
+            if(statWonAdventure1.innerText === "true") {
+                statWonAdventure1.innerText = "Completed Adventure 1"
+            } else {
+                statWonAdventure1.innerText = "Adventure 1 Unfinished"
+            }
+            const statWonAdventure2 = document.createElement('li');
+            statWonAdventure2.className = "testOn"
+            statWonAdventure2.innerText = `${user.won_adventure_2}`
+            if(statWonAdventure2.innerText === "true") {
+                statWonAdventure2.innerText = "Completed Adventure 2"
+            } else {
+                statWonAdventure2.innerText = "Adventure 2 Unfinished"
+            }
+            const statWonAdventure3 = document.createElement('li');
+            statWonAdventure3.className = "testOn"
+            statWonAdventure3.innerText = `${user.won_adventure_3}`
+            if(statWonAdventure3.innerText === "true") {
+                statWonAdventure3.innerText = "Completed Adventure 3"
+            } else {
+                statWonAdventure3.innerText = "Adventure 3 Unfinished"
+            }
+            const statWonAdventure4 = document.createElement('li');
+            statWonAdventure4.className = "testOn"
+            statWonAdventure4.innerText = `${user.won_adventure_4}`
+            if(statWonAdventure4.innerText === "true") {
+                statWonAdventure4.innerText = "Completed Adventure 4"
+            } else {
+                statWonAdventure4.innerText = "Adventure 4 Unfinished"
+            }
+
+            statUserInfo.appendChild(statWonAdventure1);
+            statUserInfo.appendChild(statWonAdventure2);
+            statUserInfo.appendChild(statWonAdventure3);
+            statUserInfo.appendChild(statWonAdventure4);
+            })
+    };
 
     changebg() {
         this.redBtn = document.querySelector('#toggle-red');
@@ -118,16 +194,6 @@ class Users {
 
         this.users.forEach(user => {
             const userInfo = document.createElement('button');
-
-/*            
-            const userStatus_1 = document.createElement('div');
-            userStatus_1.className = "test"
-            userStatus_1.adventure_2 = `${user.won_adventure_2}`
-            if (userStatus_1.adventure_2 === "true") {
-                userStatus_1.innerText = "Adventure 2 conqured"
-            }
-*/ 
-
             userInfo.className = "buttonUsers"
             userInfo.innerText = `${user.name}`
             userInfo.id = `${user.id}`

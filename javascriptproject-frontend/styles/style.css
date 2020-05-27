@@ -49,7 +49,7 @@ nav li {
   text-align: center;
   text-decoration: none;
   margin-right: 20px;
-  font-size: 40px;
+  font-size: 30px;
   background: transparent; 
   color: #d54d7b; 
   font-family: 'Rouge Script', cursive; 
@@ -285,4 +285,13 @@ nav li:hover {
   -webkit-text-stroke: 1px white;
   font-family: 'Rouge Script', cursive; 
   font-weight: bold;
+}
+
+.testOn{
+  display:block; 
+  font-size: 10px;
+}
+
+.testOff {
+  display: none;
 }
