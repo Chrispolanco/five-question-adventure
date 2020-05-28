@@ -10,6 +10,7 @@ class Users {
         this.changebg()
         this.changemusic()
         this.welcome()
+        this.stats()
     }
 
     /*    
@@ -20,21 +21,19 @@ class Users {
             }
     */
 
-/*    stats() {
-
-        
-       if (document.querySelector(".testOff").style.display = "testoff") {
-            document.querySelector(".testOff").style.display 
-            this.statBtn.addEventListener('click', (e) => {
-                e.preventDefault(); 
-                this.statFetchAndLoadUsers()
-            }); 
-        } else {
-            document.querySelector(".testOn").style.display = "block"
-        }
-
+    stats() {
+        this.statBtn.addEventListener('click', (e) => { 
+            e.preventDefault(); 
+            if(document.querySelector("li#stats").innerText === "Display Stats") {
+                document.querySelector(".statBox").style.display = "block", 
+                document.querySelector("li#stats").innerText = "Hide Stats"
+            }else{
+                document.querySelector("li#stats").innerText = "Display Stats", 
+                document.querySelector(".statBox").style.display = "none"
+            }
+        })
+    
     }; 
-    */ 
 
     statFetchAndLoadUsers() {
         this.statBtn = document.querySelector("li#stats")
@@ -98,6 +97,7 @@ class Users {
             statUserInfo.appendChild(statWonAdventure4);
             })
     };
+
 
     changebg() {
         this.redBtn = document.querySelector('#toggle-red');
