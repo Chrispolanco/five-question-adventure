@@ -6,22 +6,42 @@ class Users {
         this.herosAdapter = new HerosAdapter()
         this.adventures = []
         this.adventuresAdapter = new AdventuresAdapter()
-        this.statFetchAndLoadUsers()
         this.changebg()
         this.changemusic()
         this.welcome()
         this.stats()
+        this.statFetchAndLoadUsers()
+    }
+    
+    changebg() {
+        this.redBtn = document.querySelector('#toggle-red');
+        this.redBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.body.style.backgroundImage = "url('./images/Landscape/4.png')";
+        })
     }
 
-    /*    
-            startMusic() {
+    changemusic() {
+        this.blueBtn = document.querySelector('#toggle-blue');
+        this.blueBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             this.audio = document.getElementById('audio');
-            this.audio.mute = false;
-            this.audio.play();      
-            }
-    */
+            this.audiosource = document.getElementById('audiosource');
+            this.audiosource.src = "./music/01 - Fantastic Journey.mp3";
+            this.audio.pause();
+            this.audio.load();
+            this.audio.play();
+        })
+    }
+
+    startMusic() {
+    this.audio = document.getElementById('audio');
+    this.audio.mute = false;
+    this.audio.play();      
+    }
 
     stats() {
+        this.statBtn = document.querySelector("li#stats")
         this.statBtn.addEventListener('click', (e) => { 
             e.preventDefault(); 
             if(document.querySelector("li#stats").innerText === "Display Stats") {
@@ -36,8 +56,6 @@ class Users {
     }; 
 
     statFetchAndLoadUsers() {
-        this.statBtn = document.querySelector("li#stats")
-
         this.adapter
             .getUsers()
             .then(users => {
@@ -98,28 +116,6 @@ class Users {
             })
     };
 
-
-    changebg() {
-        this.redBtn = document.querySelector('#toggle-red');
-        this.redBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            document.body.style.backgroundImage = "url('./images/Landscape/4.png')";
-        })
-    }
-
-    changemusic() {
-        this.blueBtn = document.querySelector('#toggle-blue');
-        this.blueBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            this.audio = document.getElementById('audio');
-            this.audiosource = document.getElementById('audiosource');
-            this.audiosource.src = "./music/01 - Fantastic Journey.mp3";
-            this.audio.pause();
-            this.audio.load();
-            this.audio.play();
-        })
-    }
-
     welcome() {
         this.topInnerText = document.querySelector(".topInnerText");
         this.topInnerText.classList.add("welcome");
@@ -153,7 +149,7 @@ class Users {
         this.menu_wrapper.appendChild(this.menu_choice_two);
 
         this.menu_choice_one.addEventListener('click', this.userSignUp.bind(this)); 
-        this.menu_choice_two.addEventListener('click', this.fetchAndLoadUsers.bind(this));
+        this.menu_choice_two.addEventListener('click', this.renderUsers.bind(this));
 
     };
 
@@ -180,7 +176,6 @@ class Users {
         this.fetchAndLoadUsers()
     }
 
-
     fetchAndLoadUsers() {
         this.adapter
             .getUsers()
@@ -195,6 +190,17 @@ class Users {
     renderUsers() {
         this.topInnerText.classList.toggle("selectUser");
         this.topInnerText.innerText = "Which Brave Hero Might You Be?"
+
+        /*        
+        const array = []        
+        array.push(userInfo)
+        const last = array.pop(); 
+        this.topInnerText.appendChild(last);
+        const last = this.users.pop(); 
+                this.last = this.users.slice(-1); 
+*/ 
+
+
 
         this.users.forEach(user => {
             const userInfo = document.createElement('button');
@@ -229,7 +235,6 @@ class Users {
                 this.renderHeros()
             })
     };
-
 
     renderHeros() {
 
@@ -571,7 +576,7 @@ class Users {
     }; 
 
     correctChoiceFive() {
-        document.querySelector("#header").innerText = "You're one more step to Victory!!";   
+        document.querySelector("#header").innerText = "Victory is yours!!";   
         document.querySelector("div.box").style.display = "none"
         setTimeout(this.renderHeros().bind(this), 1000);
     }; 

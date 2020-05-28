@@ -43,5 +43,12 @@ class UsersAdapter {
         .then(resp => resp.json())
     }
 
+    delete(userInfo){
+        return fetch(this.baseUrl+`/${userInfo.id}`, {
+            method: 'DELETE'
+        })
+        .then(resp => resp.json())
+    }
+
 }
 
