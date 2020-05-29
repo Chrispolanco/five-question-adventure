@@ -13,6 +13,7 @@ class Users {
     }
   
 /*    
+            location.reload();
     changebg() {
         this.redBtn = document.querySelector('#toggle-red');
         this.redBtn.addEventListener('click', (e) => {
@@ -26,12 +27,6 @@ class Users {
         this.blueBtn = document.querySelector('#toggle-blue');
         this.blueBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            this.audio = document.getElementById('audio');
-            this.audiosource = document.getElementById('audiosource');
-            this.audiosource.src = "./music/01 - Fantastic Journey.mp3";
-            this.audio.pause();
-            this.audio.load();
-            this.audio.play();
         })
     }
 
