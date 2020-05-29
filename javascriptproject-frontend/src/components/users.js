@@ -1,18 +1,18 @@
 class Users {
     constructor() {
         this.users = []
+        this.statUsers = []
         this.adapter = new UsersAdapter()
         this.heros = []
         this.herosAdapter = new HerosAdapter()
         this.adventures = []
         this.adventuresAdapter = new AdventuresAdapter()
-        this.changebg()
         this.changemusic()
         this.welcome()
         this.stats()
-        this.statFetchAndLoadUsers()
     }
-    
+  
+/*    
     changebg() {
         this.redBtn = document.querySelector('#toggle-red');
         this.redBtn.addEventListener('click', (e) => {
@@ -20,6 +20,7 @@ class Users {
             document.body.style.backgroundImage = "url('./images/Landscape/4.png')";
         })
     }
+*/ 
 
     changemusic() {
         this.blueBtn = document.querySelector('#toggle-blue');
@@ -45,10 +46,12 @@ class Users {
         this.statBtn.addEventListener('click', (e) => { 
             e.preventDefault(); 
             if(document.querySelector("li#stats").innerText === "Display Stats") {
-                document.querySelector(".statBox").style.display = "block", 
-                document.querySelector("li#stats").innerText = "Hide Stats"
-            }else{
-                document.querySelector("li#stats").innerText = "Display Stats", 
+                this.statUsers = [], 
+                this.statFetchAndLoadUsers(), 
+                document.querySelector(".statBox").style.display = "block",   
+                document.querySelector("li#stats").innerText = "Hide Stats"  
+            }else{  
+                document.querySelector("li#stats").innerText = "Display Stats",    
                 document.querySelector(".statBox").style.display = "none"
             }
         })
@@ -59,7 +62,7 @@ class Users {
         this.adapter
             .getUsers()
             .then(users => {
-                users.forEach(user => this.users.push(new User(user)))
+                users.forEach(user => this.statUsers.push(new User(user)))
             })
             .then(() => {
                 this.statRenderUsers()
@@ -70,7 +73,7 @@ class Users {
         this.statBox = document.querySelector(" div.statBox")
         this.statBox.className = "statBox"
 
-        this.users.forEach(user => {
+        this.statUsers.forEach(user => {
             const statUserInfo = document.createElement('p');
             statUserInfo.className = "nameHeader"
             statUserInfo.innerText =  `${user.name}`
@@ -149,7 +152,7 @@ class Users {
         this.menu_wrapper.appendChild(this.menu_choice_two);
 
         this.menu_choice_one.addEventListener('click', this.userSignUp.bind(this)); 
-        this.menu_choice_two.addEventListener('click', this.renderUsers.bind(this));
+        this.menu_choice_two.addEventListener('click', this.fetchAndLoadUsers.bind(this));
 
     };
 
@@ -171,10 +174,12 @@ class Users {
         e.preventDefault(); 
         const name = this.name.value
         const username = this.username.value 
-
         this.adapter.newUser(username, name)
-        this.fetchAndLoadUsers()
+        .then(() => {
+            this.fetchAndLoadUsers()
+        })
     }
+
 
     fetchAndLoadUsers() {
         this.adapter
@@ -190,17 +195,6 @@ class Users {
     renderUsers() {
         this.topInnerText.classList.toggle("selectUser");
         this.topInnerText.innerText = "Which Brave Hero Might You Be?"
-
-        /*        
-        const array = []        
-        array.push(userInfo)
-        const last = array.pop(); 
-        this.topInnerText.appendChild(last);
-        const last = this.users.pop(); 
-                this.last = this.users.slice(-1); 
-*/ 
-
-
 
         this.users.forEach(user => {
             const userInfo = document.createElement('button');
@@ -243,6 +237,8 @@ class Users {
             heroInfo.className = "buttonHeros"
             heroInfo.innerText = `${hero.name}`
             heroInfo.id = `${hero.id}`
+            heroInfo.age = `${hero.age}`
+            heroInfo.health = `${hero.health}`
             this.topInnerText.appendChild(heroInfo)
 
             heroInfo.addEventListener('click', (e) => {
@@ -507,7 +503,6 @@ class Users {
     this.adapter.editUser(this.userId, this.user)
 
     this.topInnerText.innerText = this.number
-    console.log(this.user.won_adventure_1, this.user.won_adventure_2, this.user.won_adventure_3, this.user.won_adventure_4)
     }
 
 
