@@ -198,6 +198,10 @@ class Users {
         this.topInnerText.classList.toggle("selectUser");
         this.topInnerText.innerText = "Which Brave Hero Might You Be?"
 
+        while (this.topInnerText.firstChild) {
+            this.topInnerText.removeChild(this.topInnerText.firstChild)
+        }; 
+
         this.users.forEach(user => {
             const userInfo = document.createElement('button');
             userInfo.className = "buttonUsers"
