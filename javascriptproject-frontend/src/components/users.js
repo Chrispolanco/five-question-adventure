@@ -65,8 +65,14 @@ class Users {
     };
 
     statRenderUsers() {
+ 
         this.statBox = document.querySelector(" div.statBox")
         this.statBox.className = "statBox"
+
+        while (this.statBox.firstChild) {
+            this.statBox.removeChild(this.statBox.firstChild)
+        }; 
+
 
         this.statUsers.forEach(user => {
             const statUserInfo = document.createElement('p');
@@ -112,6 +118,7 @@ class Users {
             statUserInfo.appendChild(statWonAdventure3);
             statUserInfo.appendChild(statWonAdventure4);
             })
+
     };
 
     welcome() {
