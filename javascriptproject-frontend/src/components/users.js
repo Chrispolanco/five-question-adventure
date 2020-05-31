@@ -7,34 +7,37 @@ class Users {
         this.herosAdapter = new HerosAdapter()
         this.adventures = []
         this.adventuresAdapter = new AdventuresAdapter()
-        this.changemusic()
         this.welcome()
         this.stats()
+        this.musicAdventure()
+        this.musicLoss()
     }
-  
-/*    
-            location.reload();
-    changebg() {
-        this.redBtn = document.querySelector('#toggle-red');
-        this.redBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            document.body.style.backgroundImage = "url('./images/Landscape/4.png')";
-        })
-    }
-*/ 
 
-    changemusic() {
-        this.blueBtn = document.querySelector('#toggle-blue');
-        this.blueBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-        })
+
+    musicAdventure() {
+        let audio = document.getElementById('audio');
+        let audiosource = document.getElementById('audiosource');
+        audiosource.src = this.adventureInfo.background_music_1_4; 
+        audio.pause(); 
+        audio.load();
     }
+
+    musicLoss() {
+        let audio = document.getElementById('audio');
+        let audiosource = document.getElementById('audiosource');
+
+        audiosource.src = this.adventureInfo.background_music_loss; 
+        audio.pause(); 
+        audio.load();
+    }
+
 
     startMusic() {
     this.audio = document.getElementById('audio');
     this.audio.mute = false;
     this.audio.play();      
     }
+ 
 
     stats() {
         this.statBtn = document.querySelector("li#stats")
@@ -163,6 +166,7 @@ class Users {
     };
 
     userSignUp() { 
+        this.startMusic(); 
         document.querySelector(".signUpForm").style.display = "block"
         this.form = document.querySelector(".signUpForm")
         this.topInnerText.innerText = "What is your story traveler?";
@@ -188,6 +192,7 @@ class Users {
 
 
     fetchAndLoadUsers() {
+        this.startMusic()
         this.adapter
             .getUsers()
             .then(users => {
@@ -343,8 +348,11 @@ class Users {
     };
 
     storyInfo() {
+        this.musicAdventure(); 
+        
         document.querySelector("div.box").style.display = "block"
         document.querySelector("#header").innerText = "Mini Question Adventure"
+
         this.topInnerText.innerText = this.adventureInfo.story;
         document.body.style.backgroundImage = this.adventureInfo.background_image_questions_1_to_4;
         this.hero.health = 1
@@ -612,6 +620,7 @@ class Users {
     }; 
 
     loss() {
+        this.musicLoss();
 
         document.querySelector("div.box").style.display = "none"
         document.body.style.backgroundImage = "none";
