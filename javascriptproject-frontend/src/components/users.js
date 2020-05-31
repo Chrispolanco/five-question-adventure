@@ -122,13 +122,17 @@ class Users {
     };
 
     welcome() {
+
+        this.title = document.querySelector("#header")
+        this.title.classList.remove("#header")
+
         this.topInnerText = document.querySelector(".topInnerText");
         this.topInnerText.classList.add("welcome");
         this.topInnerText.classList.add("welcome:hover");
         this.topInnerText.innerText = "Welcome Hero your journey awaits";
         this.topInnerText.classList.remove("topInnerText");
 
-        setTimeout(this.menuChoice.bind(this), 1000);
+        setTimeout(this.menuChoice.bind(this), 3000);
     }
 
     menuChoice() {
@@ -195,17 +199,21 @@ class Users {
     };
 
     renderUsers() {
-        this.topInnerText.classList.toggle("selectUser");
-        this.topInnerText.innerText = "Which Brave Hero Might You Be?"
+
 
         while (this.topInnerText.firstChild) {
             this.topInnerText.removeChild(this.topInnerText.firstChild)
         }; 
 
+        this.topInnerText.classList.toggle("selectUser");
+        this.topInnerText.innerText = "Which Brave Hero Might You Be?"
+
         this.users.forEach(user => {
             const userInfo = document.createElement('button');
             userInfo.className = "buttonUsers"
             userInfo.innerText = `${user.name}`
+            userInfo.name = `${user.name}`
+            userInfo.username = `${user.username}`
             userInfo.id = `${user.id}`
             userInfo.won_adventure_1 = `${user.won_adventure_1}`
             userInfo.won_adventure_2 = `${user.won_adventure_2}`
@@ -250,7 +258,7 @@ class Users {
             heroInfo.addEventListener('click', (e) => {
                 e.preventDefault();
                 this.topInnerText.innerText = `${heroInfo.innerText}, ` + "which adventure calls you?"
-                this.hero = heroInfo.id;
+                this.hero = heroInfo;
                 this.fetchAndLoadAdventures(); 
             })
         })
@@ -319,7 +327,7 @@ class Users {
 
             adventureInfo.innerText = `${adventure.adventure_number}`; 
             
-            if (adventureInfo.hero_id === this.hero) {
+            if (adventureInfo.hero_id === this.hero.id) {
                 this.topInnerText.appendChild(adventureInfo)
             }
     
@@ -335,15 +343,20 @@ class Users {
     };
 
     storyInfo() {
-        document.body.style.backgroundImage = this.adventureInfo.background_image_questions_1_to_4;
+        document.querySelector("div.box").style.display = "block"
+        document.querySelector("#header").innerText = "Mini Question Adventure"
         this.topInnerText.innerText = this.adventureInfo.story;
-        setTimeout(this.first_question.bind(this), 1000);
+        document.body.style.backgroundImage = this.adventureInfo.background_image_questions_1_to_4;
+        this.hero.health = 1
+
+        setTimeout(this.first_question.bind(this), 6000);
     }
 
     first_question() {
 
         document.querySelector("div.box").style.display = "block"
         document.querySelector("#header").innerText = "Mini Question Adventure"
+
         document.body.style.backgroundImage = this.adventureInfo.background_image_questions_1_to_4;
         this.topInnerText.innerText = this.adventureInfo.questions_1;
         this.topInnerText.className = "questions";
@@ -366,13 +379,17 @@ class Users {
         this.wrapper_questions.appendChild(this.secondChoice);
         this.wrapper_questions.appendChild(this.thirdChoice);
 
+
         this.wrapper_questions.addEventListener('click', (e)=> {
             e.preventDefault(); 
             if(e.target.innerText === this.adventureInfo.answer_1) {
                 this.correctChoiceOne(); 
-            } else {
-                this.wrongChoiceOne();
-            }
+            } else if (e.target.innerText !== this.adventureInfo.answer_1 && this.hero.health > 0) { 
+            this.wrongChoiceOne() 
+            this.hero.health = 0 
+            } else { 
+                this.loss();
+            }; 
         })
      };
 
@@ -396,15 +413,16 @@ class Users {
         this.wrapper_questions.appendChild(this.thirdChoice);
 
         this.wrapper_questions.addEventListener('click', (e)=> {
-            e.preventDefault(); 
             if(e.target.innerText === this.adventureInfo.answer_2) {
                 this.correctChoiceTwo(); 
-            } else {
-                this.wrongChoiceTwo();
-            }
+            } else if (e.target.innerText !== this.adventureInfo.answer_2 && this.hero.health > 0) { 
+            this.wrongChoiceTwo() 
+            this.hero.health = 0 
+            } else { 
+                this.loss();
+            }; 
         })
-    };
-
+     };
     third_question() {
         document.querySelector("div.box").style.display = "block"
         document.querySelector("#header").innerText = "Mini Question Adventure"
@@ -424,14 +442,16 @@ class Users {
         this.wrapper_questions.appendChild(this.thirdChoice);
 
         this.wrapper_questions.addEventListener('click', (e)=> {
-            e.preventDefault(); 
             if(e.target.innerText === this.adventureInfo.answer_3) {
                 this.correctChoiceThree(); 
-            } else {
-                this.wrongChoiceThree();
-            }
+            } else if (e.target.innerText !== this.adventureInfo.answer_3 && this.hero.health > 0) { 
+            this.wrongChoiceThree() 
+            this.hero.health = 0 
+            } else { 
+                this.loss();
+            }; 
         })
-    };
+     };
     
     fourth_question() {
         document.querySelector("div.box").style.display = "block"
@@ -452,14 +472,16 @@ class Users {
         this.wrapper_questions.appendChild(this.thirdChoice);
 
         this.wrapper_questions.addEventListener('click', (e)=> {
-            e.preventDefault(); 
             if(e.target.innerText === this.adventureInfo.answer_4) {
                 this.correctChoiceFour(); 
-            } else {
-                this.wrongChoiceFour();
-            }
+            } else if (e.target.innerText !== this.adventureInfo.answer_4 && this.hero.health > 0) { 
+            this.wrongChoiceFour() 
+            this.hero.health = 0 
+            } else { 
+                this.loss();
+            }; 
         })
-    };
+     };
 
     fifth_question() {
         document.querySelector("div.box").style.display = "block"
@@ -480,14 +502,16 @@ class Users {
         this.wrapper_questions.appendChild(this.thirdChoice);
 
         this.wrapper_questions.addEventListener('click', (e)=> {
-            e.preventDefault(); 
             if(e.target.innerText === this.adventureInfo.answer_5) {
-                this.updateUser(this.adventureInfo, this.user) 
-            } else {
-                this.wrongChoiceFive();
-            }
+                this.correctChoiceFive(); 
+            } else if (e.target.innerText !== this.adventureInfo.answer_5 && this.hero.health > 0) { 
+            this.wrongChoiceFive() 
+            this.hero.health = 0 
+            } else { 
+                this.loss();
+            }; 
         })
-    };
+     };
 
     updateUser() {
 
@@ -507,8 +531,9 @@ class Users {
             this.user.won_adventure_4 = "true"
         }
     this.adapter.editUser(this.userId, this.user)
+    
+        this.won(); 
 
-    this.topInnerText.innerText = this.number
     }
 
 
@@ -517,15 +542,16 @@ class Users {
         document.querySelector("div.box").style.display = "none"
         document.querySelector("#header").innerText = "One more chance hero";   
 
-        setTimeout(this.first_question.bind(this), 1000);
+        setTimeout(this.first_question.bind(this), 2000);
     }; 
 
     wrongChoiceTwo() {
+
         document.body.style.backgroundImage = this.adventureInfo.background_image_loss;
         document.querySelector("div.box").style.display = "none"
         document.querySelector("#header").innerText = "One more chance hero"; 
 
-        setTimeout(this.second_question.bind(this), 1000);
+        setTimeout(this.second_question.bind(this), 2000);
     }; 
 
     wrongChoiceThree() {
@@ -533,69 +559,84 @@ class Users {
         document.querySelector("div.box").style.display = "none"
         document.querySelector("#header").innerText = "One more chance hero"; 
 
-        setTimeout(this.third_question.bind(this), 1000);
+        setTimeout(this.third_question.bind(this), 2000);
     }; 
 
     wrongChoiceFour() {
+
         document.body.style.backgroundImage = this.adventureInfo.background_image_loss;
         document.querySelector("div.box").style.display = "none"
         document.querySelector("#header").innerText = "One more chance hero"; 
 
-        setTimeout(this.fourth_question.bind(this), 1000);
+        setTimeout(this.fourth_question.bind(this), 2000);
     }; 
 
     wrongChoiceFive() {
+
         document.body.style.backgroundImage = this.adventureInfo.background_image_loss;
         document.querySelector("div.box").style.display = "none"
         document.querySelector("#header").innerText = "One more chance hero";  
 
-        setTimeout(this.fifth_question.bind(this), 1000);
+        setTimeout(this.fifth_question.bind(this), 2000);
     }; 
 
     correctChoiceOne() {
         document.querySelector("#header").innerText = "You're one more step to Victory!!"; 
         document.querySelector("div.box").style.display = "none" 
-        setTimeout(this.second_question.bind(this), 1000);
+        setTimeout(this.second_question.bind(this), 2000);
     }; 
 
     correctChoiceTwo() {
         document.querySelector("#header").innerText = "You're one more step to Victory!!";   
         document.querySelector("div.box").style.display = "none"
-        setTimeout(this.third_question.bind(this), 1000);
+        setTimeout(this.third_question.bind(this), 2000);
     }; 
 
     correctChoiceThree() {
         document.querySelector("#header").innerText = "You're one more step to Victory!!";  
         document.querySelector("div.box").style.display = "none" 
-        setTimeout(this.fourth_question.bind(this), 1000);
+        setTimeout(this.fourth_question.bind(this), 2000);
     }; 
 
     correctChoiceFour() {
         document.querySelector("#header").innerText = "You're one more step to Victory!!";  
         document.querySelector("div.box").style.display = "none"
-        setTimeout(this.fifth_question.bind(this), 1000);
+        setTimeout(this.fifth_question.bind(this), 2000);
     }; 
 
     correctChoiceFive() {
-        document.querySelector("#header").innerText = "Victory is yours!!";   
+        document.body.style.backgroundImage = this.adventureInfo.background_image_won;
+        document.querySelector("#header").innerText = "Victory is yours " + `${this.user.name}` + "!!" + "Congratulations";   
         document.querySelector("div.box").style.display = "none"
-        setTimeout(this.renderHeros().bind(this), 1000);
+        setTimeout(this.updateUser.bind(this), 2000);
     }; 
 
     loss() {
+
         document.querySelector("div.box").style.display = "none"
         document.body.style.backgroundImage = "none";
-        document.querySelector("#header").innerText = "FIN";   
+        document.querySelector("#header").innerText = this.adventureInfo.phrase_incorrect;   
         document.body.style.backgroundColor = "black";
 
-        setTimeout(this.storyInfo.bind(this), 1000);
+        setTimeout(this.storyInfo.bind(this), 4000);
+    }; 
 
-    }
+    restart() {
+        location.reload()
+    }; 
+
+    won() {
+        document.querySelector("div.box").style.display = "none"
+        document.body.style.backgroundImage = this.adventureInfo.background_image_won;
+        document.querySelector("#header").innerText = this.adventureInfo.phrase_correct; 
+
+        setTimeout(this.restart.bind(this), 6000);
+    }; 
+
+    restart() {
+        location.reload()
+    }; 
 }
-
-
-
-
 
 
 

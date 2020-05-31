@@ -24,6 +24,7 @@ body {
   overflow: visible;
 }
 
+
 #header:hover {
   background-image: url('../images/Sprites/Run (1).png'), url('../images/Sprites/Run (2).png'), url('../images/Sprites/Run (3).png'), url('../images/Sprites/Run (4).png'), url('../images/Sprites/Run (5).png'), url('../images/Sprites/Run (6).png'), url('../images/Sprites/Run (7).png'), url('../images/Sprites/Run (8).png'), url('../images/Sprites/Run (9).png'), url('../images/Sprites/Run (10).png'), url('../images/Sprites/JumpAttack (1).png'), url('../images/Sprites/JumpAttack (2).png'), url('../images/Sprites/JumpAttack (3).png'), url('../images/Sprites/JumpAttack (4).png'), url('../images/Sprites/JumpAttack (5).png'),url('../images/Sprites/JumpAttack (6).png'), url('../images/Sprites/JumpAttack (7).png'), url('../images/Sprites/JumpAttack (8).png'),url('../images/Sprites/JumpAttack (9).png'), url('../images/Sprites/JumpAttack (10).png'), url('../images/Sprites/Dino.png') ;
   background-repeat: no-repeat;
@@ -39,9 +40,10 @@ body {
   text-align: left; 
   text-shadow: 0 1px 1px #fff;
   overflow: visible;
-  padding-top: 57px; 
+  padding-top: 100px; 
   padding-bottom: 0px;
 }
+ 
 
 nav li {
   float: right; 
@@ -81,6 +83,7 @@ nav li:hover {
   background-size: cover; 
   background-attachment: scroll; 
   opacity: .85;
+  overflow-y: scroll;
 }
 
 .welcome {
