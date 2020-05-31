@@ -31,6 +31,15 @@ class Users {
         audio.load();
     }
 
+    musicWon() {
+        let audio = document.getElementById('audio');
+        let audiosource = document.getElementById('audiosource');
+
+        audiosource.src = this.adventureInfo.background_music_won; 
+        audio.pause(); 
+        audio.load();
+    }
+
 
     startMusic() {
     this.audio = document.getElementById('audio');
@@ -635,6 +644,8 @@ class Users {
     }; 
 
     won() {
+        this.musicWon(); 
+
         document.querySelector("div.box").style.display = "none"
         document.body.style.backgroundImage = this.adventureInfo.background_image_won;
         document.querySelector("#header").innerText = this.adventureInfo.phrase_correct; 

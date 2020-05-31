@@ -26,10 +26,10 @@ body {
 
 
 #header:hover {
-  background-image: url('../images/Sprites/Run (1).png'), url('../images/Sprites/Run (2).png'), url('../images/Sprites/Run (3).png'), url('../images/Sprites/Run (4).png'), url('../images/Sprites/Run (5).png'), url('../images/Sprites/Run (6).png'), url('../images/Sprites/Run (7).png'), url('../images/Sprites/Run (8).png'), url('../images/Sprites/Run (9).png'), url('../images/Sprites/Run (10).png'), url('../images/Sprites/JumpAttack (1).png'), url('../images/Sprites/JumpAttack (2).png'), url('../images/Sprites/JumpAttack (3).png'), url('../images/Sprites/JumpAttack (4).png'), url('../images/Sprites/JumpAttack (5).png'),url('../images/Sprites/JumpAttack (6).png'), url('../images/Sprites/JumpAttack (7).png'), url('../images/Sprites/JumpAttack (8).png'),url('../images/Sprites/JumpAttack (9).png'), url('../images/Sprites/JumpAttack (10).png'), url('../images/Sprites/Dino.png') ;
+  background-image: url('../images/Soldiers/1.png'), url('../images/Soldiers/2.png'), url('../images/Soldiers/3.png'),url('../images/Soldiers/1.png'), url('../images/Soldiers/2.png'), url('../images/Soldiers/3.png'),url('../images/Soldiers/1.png'), url('../images/Soldiers/2.png'), url('../images/Soldiers/3.png'),url('../images/Soldiers/1.png'), url('../images/Soldiers/2.png'), url('../images/Soldiers/3.png'),url('../images/Soldiers/1.png'), url('../images/Soldiers/2.png'), url('../images/Soldiers/3.png'), url('../images/Soldiers/1.png'), url('../images/Sprites_2/8.png') ;
   background-repeat: no-repeat;
-  background-size: 100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px, 100px, 300px;
-  background-position: 0px 0px, 80px 0px, 160px 0px, 240px 0px, 320px 0px, 400px 0px, 480px 0px, 560px 0px, 640px 0px, 720px 0px, 800px 0px, 880px 0px, 960px 0px, 1040px 0px, 1120px 0px, 1200px 0px, 1280px 0px, 1360px 0px, 1440px 0px, 1530px 0px, 1600px, 50px;
+  background-size: 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 400px ;
+  background-position: 0px 0px, 100px 0px, 200px 0px, 300px 0px, 400px 0px, 500px 0px, 600px 0px, 700px 0px, 800px 0px, 900px 0px, 1000px 0px, 1100px 0px, 1200px 0px, 1300px 0px, 1400px 0px, 1500px 0px, 1550px 0px ;
   text-shadow: none;
   color: #d54d7b; 
   font-size: 138px;
