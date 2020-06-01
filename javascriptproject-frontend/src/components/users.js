@@ -160,11 +160,11 @@ class Users {
 
         this.menu_choice_one = document.createElement('Button');
         this.menu_choice_one.className = "menu_choice";
-        this.menu_choice_one.innerText = "New Adventure";
+        this.menu_choice_one.innerText = "New Adventurer";
 
         this.menu_choice_two = document.createElement('Button');
         this.menu_choice_two.className = "menu_choice";
-        this.menu_choice_two.innerText = "Log In";
+        this.menu_choice_two.innerText = "Returning Adventurer";
 
         this.menu_wrapper.appendChild(this.menu_choice_one);
         this.menu_wrapper.appendChild(this.menu_choice_two);
@@ -220,7 +220,7 @@ class Users {
         }; 
 
         this.topInnerText.classList.toggle("selectUser");
-        this.topInnerText.innerText = "Which Brave Hero Might You Be?"
+        this.topInnerText.innerText = "Which Brave Adventurer Might You Be?"
 
         this.users.forEach(user => {
             const userInfo = document.createElement('button');
