@@ -9,8 +9,6 @@ class Users {
         this.adventuresAdapter = new AdventuresAdapter()
         this.welcome()
         this.stats()
-        this.musicAdventure()
-        this.musicLoss()
     }
 
 
@@ -93,7 +91,7 @@ class Users {
             this.statBox.appendChild(statUserInfo)
 
             const statWonAdventure1 = document.createElement('li');
-            statWonAdventure1.className = "testOn"
+            statWonAdventure1.className = "adventureData"
             statWonAdventure1.innerText = `${user.won_adventure_1}`
             if(statWonAdventure1.innerText === "true") {
                 statWonAdventure1.innerText = "Completed Adventure 1"
@@ -101,7 +99,7 @@ class Users {
                 statWonAdventure1.innerText = "Adventure 1 Unfinished"
             }
             const statWonAdventure2 = document.createElement('li');
-            statWonAdventure2.className = "testOn"
+            statWonAdventure2.className = "adventureData"
             statWonAdventure2.innerText = `${user.won_adventure_2}`
             if(statWonAdventure2.innerText === "true") {
                 statWonAdventure2.innerText = "Completed Adventure 2"
@@ -109,7 +107,7 @@ class Users {
                 statWonAdventure2.innerText = "Adventure 2 Unfinished"
             }
             const statWonAdventure3 = document.createElement('li');
-            statWonAdventure3.className = "testOn"
+            statWonAdventure3.className = "adventureData"
             statWonAdventure3.innerText = `${user.won_adventure_3}`
             if(statWonAdventure3.innerText === "true") {
                 statWonAdventure3.innerText = "Completed Adventure 3"
@@ -117,7 +115,7 @@ class Users {
                 statWonAdventure3.innerText = "Adventure 3 Unfinished"
             }
             const statWonAdventure4 = document.createElement('li');
-            statWonAdventure4.className = "testOn"
+            statWonAdventure4.className = "adventureData"
             statWonAdventure4.innerText = `${user.won_adventure_4}`
             if(statWonAdventure4.innerText === "true") {
                 statWonAdventure4.innerText = "Completed Adventure 4"
@@ -144,13 +142,13 @@ class Users {
         this.topInnerText.innerText = "Welcome Hero your journey awaits";
         this.topInnerText.classList.remove("topInnerText");
 
-        setTimeout(this.menuChoice.bind(this), 3000);
+        setTimeout(this.menuChoice.bind(this), 3500);
     }
 
     menuChoice() {
         this.topInnerText.classList.remove("welcome");
         this.topInnerText.classList.remove("welcome:hover");
-        this.topInnerText.classList.add("startScreen");
+        this.topInnerText.classList.add("selectUser");
 
         this.topInnerText.innerText = "Is this your first adventure?";
 
@@ -178,13 +176,13 @@ class Users {
         this.startMusic(); 
         document.querySelector(".signUpForm").style.display = "block"
         this.form = document.querySelector(".signUpForm")
-        this.topInnerText.innerText = "What is your story traveler?";
+        this.topInnerText.innerText = "What is your name traveler?";
         this.topInnerText.appendChild(this.form);
 
         this.username = document.querySelectorAll("input")[0]
         this.name = document.querySelectorAll("input")[1]
 
-        this.signUpBtn = document.querySelector("#Login"); 
+        this.signUpBtn = document.querySelector("#signUp"); 
 
         this.signUpBtn.addEventListener('click',this.createUser.bind(this))
     }
@@ -214,12 +212,10 @@ class Users {
 
     renderUsers() {
 
-
         while (this.topInnerText.firstChild) {
             this.topInnerText.removeChild(this.topInnerText.firstChild)
         }; 
 
-        this.topInnerText.classList.toggle("selectUser");
         this.topInnerText.innerText = "Which Brave Adventurer Might You Be?"
 
         this.users.forEach(user => {
@@ -344,9 +340,7 @@ class Users {
             if (adventureInfo.hero_id === this.hero.id) {
                 this.topInnerText.appendChild(adventureInfo)
             }
-    
-
-            
+        
             adventureInfo.addEventListener('click', (e)=> {
                 e.preventDefault();  
                 this.adventureInfo = adventureInfo
@@ -362,11 +356,14 @@ class Users {
         document.querySelector("div.box").style.display = "block"
         document.querySelector("#header").innerText = "Mini Question Adventure"
 
+        this.topInnerText.classList.remove("selectUser");
+        this.topInnerText.classList.add("story"); 
+
         this.topInnerText.innerText = this.adventureInfo.story;
         document.body.style.backgroundImage = this.adventureInfo.background_image_questions_1_to_4;
         this.hero.health = 1
 
-        setTimeout(this.first_question.bind(this), 6000);
+        setTimeout(this.first_question.bind(this), 10000);
     }
 
     first_question() {

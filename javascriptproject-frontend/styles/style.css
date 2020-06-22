@@ -129,7 +129,7 @@ nav li:hover {
 
 .menu_choice {
   display: block;
-  font-size: 20px;
+  font-size: 30px;
   line-height: 2.5;
   background-color: lightseagreen;
   text-align: center;
@@ -212,25 +212,25 @@ nav li:hover {
 }
 
 .selectUser {
-  font-size: 40px; 
-  color: crimson;
+  font-size: 50px; 
+  color: rgb(202, 78, 103);
   text-align: center;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   font-family: 'Rouge Script', cursive; 
-  font-weight: bold;
+  font-weight: bolder;
   letter-spacing: -1px;
-  -webkit-text-stroke: .5px rgb(15, 69, 90);
+  -webkit-text-stroke: .5px rgb(59, 77, 241);
   margin-bottom: 5px;
 }
 
 .buttonUsers {
   display:list-item	;
-  font-size: 17px;
+  font-size: 25px;
   color: darkcyan;
   -webkit-text-stroke: 1px white;
   font-family: 'Rouge Script', cursive; 
-  font-weight: bold;
+  font-weight: bolder;
   letter-spacing: 4px;
   opacity: .75;
   line-height: 1.5;
@@ -248,11 +248,11 @@ nav li:hover {
 
 .buttonHeros {
   display:block	;
-  font-size: 30px;
+  font-size: 25px;
   color: darkcyan;
   -webkit-text-stroke: 1px white;
   font-family: 'Rouge Script', cursive; 
-  font-weight: bold;
+  font-weight: bolder;
   letter-spacing: 2px;
   opacity: .75;
   line-height: 2;
@@ -260,7 +260,7 @@ nav li:hover {
   margin-left: 35%;
   width: 30%;
   padding: 0px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .buttonHeros:hover {
@@ -287,8 +287,10 @@ nav li:hover {
 
 .nameHeader{
   display:block; 
-  font-size: 20px;
+  font-size: 30px;
   text-align: center; 
+  font-weight: bolder;
+  font-family: cursive;
 }
 
 
@@ -308,4 +310,23 @@ nav li:hover {
   background-size: cover; 
   background-attachment: scroll; 
   opacity: .85;
+}
+
+.adventureData {
+  color:white;
+  font-size: 20px;
+  font-family: cursive;
+}
+
+.story{
+  font-size: 35px;
+  color: white; 
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  font-family: 'Rouge Script', cursive; 
+  font-weight: bold;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 2px rgb(0, 0, 0);
+  margin-bottom: 5px;
 }
