@@ -133,9 +133,6 @@ class Users {
 
     welcome() {
 
-        this.title = document.querySelector("#header")
-        this.title.classList.remove("#header")
-
         this.topInnerText = document.querySelector(".topInnerText");
         this.topInnerText.classList.add("welcome");
         this.topInnerText.classList.add("welcome:hover");
@@ -621,8 +618,7 @@ class Users {
     correctChoiceFive() {
         document.body.style.backgroundImage = this.adventureInfo.background_image_won;
         document.querySelector("#header").innerText = "Victory is yours " + `${this.user.name}` + "!!" + "Congratulations";   
-        document.querySelector("div.box").style.display = "none"
-        setTimeout(this.updateUser.bind(this), 2000);
+        setTimeout(this.updateUser.bind(this), 1);
     }; 
 
     loss() {
@@ -643,11 +639,10 @@ class Users {
     won() {
         this.musicWon(); 
 
-        document.querySelector("div.box").style.display = "none"
         document.body.style.backgroundImage = this.adventureInfo.background_image_won;
-        document.querySelector("#header").innerText = this.adventureInfo.phrase_correct; 
+        this.topInnerText.innerText = this.adventureInfo.phrase_correct; 
 
-        setTimeout(this.restart.bind(this), 6000);
+        setTimeout(this.restart.bind(this), 10000);
     }; 
 
     restart() {
