@@ -349,9 +349,9 @@ class Users {
 
     storyInfo() {
         this.musicAdventure(); 
-        
-        document.querySelector("div.box").style.display = "block"
-        document.querySelector("#header").innerText = "Mini Question Adventure"
+
+        document.querySelector("div.box").style.backgroundImage = "url('./images/InnerBG/2.jpg')";         
+        document.querySelector("#header").innerText = "Mini Question Adventure"; 
 
         this.topInnerText.classList.remove("selectUser");
         this.topInnerText.classList.add("story"); 
@@ -406,6 +406,7 @@ class Users {
 
 
     second_question() {
+
         document.querySelector("div.box").style.display = "block"
         document.querySelector("#header").innerText = "Mini Question Adventure"
         document.body.style.backgroundImage = this.adventureInfo.background_image_questions_1_to_4;
@@ -435,6 +436,7 @@ class Users {
         })
      };
     third_question() {
+
         document.querySelector("div.box").style.display = "block"
         document.querySelector("#header").innerText = "Mini Question Adventure"
         document.body.style.backgroundImage = this.adventureInfo.background_image_questions_1_to_4;
@@ -465,6 +467,7 @@ class Users {
      };
     
     fourth_question() {
+
         document.querySelector("div.box").style.display = "block"
         document.querySelector("#header").innerText = "Mini Question Adventure"
         document.body.style.backgroundImage = this.adventureInfo.background_image_questions_1_to_4;
@@ -495,6 +498,7 @@ class Users {
      };
 
     fifth_question() {
+
         document.querySelector("div.box").style.display = "block"
         document.querySelector("#header").innerText = "Mini Question Adventure"
         document.body.style.backgroundImage = this.adventureInfo.background_image_question_5;
@@ -624,10 +628,12 @@ class Users {
     loss() {
         this.musicLoss();
 
-        document.querySelector("div.box").style.display = "none"
+        this.topInnerText.classList.remove("questions")
+        this.topInnerText.classList.add("story"); 
+        this.topInnerText.innerText  = this.adventureInfo.phrase_incorrect;   
         document.body.style.backgroundImage = "none";
-        document.querySelector("#header").innerText = this.adventureInfo.phrase_incorrect;   
         document.body.style.backgroundColor = "black";
+        document.querySelector("div.box").style.backgroundImage = this.adventureInfo.background_image_loss; 
 
         setTimeout(this.storyInfo.bind(this), 4000);
     }; 
@@ -639,6 +645,8 @@ class Users {
     won() {
         this.musicWon(); 
 
+        this.topInnerText.classList.remove("questions")
+        this.topInnerText.classList.add("story"); 
         document.body.style.backgroundImage = this.adventureInfo.background_image_won;
         this.topInnerText.innerText = this.adventureInfo.phrase_correct; 
 
