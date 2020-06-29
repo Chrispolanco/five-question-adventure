@@ -164,11 +164,12 @@ class Users {
         this.menu_wrapper.appendChild(this.menu_choice_one);
         this.menu_wrapper.appendChild(this.menu_choice_two);
 
-        this.menu_choice_one.addEventListener('click', this.userSignUp.bind(this)); 
+        this.menu_choice_one.addEventListener('click', this.userSignUp.bind(this));
         this.menu_choice_two.addEventListener('click', this.fetchAndLoadUsers.bind(this));
 
     };
 
+    
     userSignUp() { 
         this.startMusic(); 
         document.querySelector(".signUpForm").style.display = "block"
