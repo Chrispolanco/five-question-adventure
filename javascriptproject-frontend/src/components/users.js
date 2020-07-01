@@ -60,7 +60,6 @@ class Users {
                 document.querySelector(".statBox").style.display = "none"
             }
         })
-    
     }; 
 
     statFetchAndLoadUsers() {
@@ -169,9 +168,7 @@ class Users {
 
     };
 
-    
     userSignUp() { 
-        this.startMusic(); 
         document.querySelector(".signUpForm").style.display = "block"
         this.form = document.querySelector(".signUpForm")
         this.topInnerText.innerText = "What is your name traveler?";
