@@ -14,6 +14,7 @@ class UsersAdapter {
             username: username, 
             name: name
         }
+
         return fetch(this.baseUrl, {
             method: "POST", 
             headers: {
@@ -23,6 +24,7 @@ class UsersAdapter {
             body: JSON.stringify(user)
         })
             .then(resp => resp.json())
+    
     }
 
     editUser(userId, userUpdate) {
