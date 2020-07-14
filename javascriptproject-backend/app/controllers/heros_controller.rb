@@ -24,8 +24,6 @@ class HerosController < ApplicationController
         hero = Hero.find(params[:id])
         if hero.update(hero_params) 
             render json: HeroSerializer.new(hero).to_serialized_json
-        else 
-            render json: {status: 500}
         end 
     end 
 

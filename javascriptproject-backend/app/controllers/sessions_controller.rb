@@ -10,8 +10,6 @@ class SessionsController < ApplicationController
         if @user && @user.authenticate(params[:session][:password])
             session[:user_id] = @user.id 
             render json: UserSerializer.new(user).to_serialized_json
-        else 
-            render json: { status: 400}
         end 
     end 
 

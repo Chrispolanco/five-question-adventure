@@ -19,8 +19,6 @@ class AdventuresController < ApplicationController
         @adventure = Adventure.find(params[:id]) 
         if @adventure.update(adventure_params) 
             render json: Adventure.new(@adventure).to_serialized_json
-        else 
-            render json: {status:500}
         end 
     end     
 
