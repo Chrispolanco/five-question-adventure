@@ -190,7 +190,7 @@ class Users {
         .then(() => {
             this.fetchAndLoadUsers()
         })
-        .catch(function(error) {
+        .catch(function() {
             alert("Username & Name must be filled in");
         });
     }
