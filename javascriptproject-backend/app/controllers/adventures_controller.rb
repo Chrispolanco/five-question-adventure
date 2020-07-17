@@ -38,3 +38,5 @@ class AdventuresController < ApplicationController
         end 
 
 end
+
+#test

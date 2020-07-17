@@ -41,3 +41,6 @@ class UsersController < ApplicationController
     end
 
 end
+
+
+#This is a test
