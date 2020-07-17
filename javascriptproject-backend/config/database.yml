@@ -26,8 +26,8 @@ development:
   database: javascriptproject_backend_development
 
   host: localhost
-  user: Christian
-  password: nightsky
+  user: 
+  password: Outliner12
   
 
   # The specified database role being used to connect to postgres.
@@ -65,8 +65,8 @@ test:
   database: javascriptproject_backend_test
 
   host: localhost
-  user: Christian
-  password: nightsky
+  user: 
+  password: Outliner12
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

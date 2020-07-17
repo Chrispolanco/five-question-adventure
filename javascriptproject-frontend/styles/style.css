@@ -26,10 +26,10 @@ body {
 
 
 #header:hover {
-  background-image: url('../images/Soldiers/1.png'), url('../images/Soldiers/2.png'), url('../images/Soldiers/3.png'),url('../images/Soldiers/1.png'), url('../images/Soldiers/2.png'), url('../images/Soldiers/3.png'),url('../images/Soldiers/1.png'), url('../images/Soldiers/2.png'), url('../images/Soldiers/3.png'),url('../images/Soldiers/1.png'), url('../images/Soldiers/2.png'), url('../images/Soldiers/3.png'),url('../images/Soldiers/1.png'), url('../images/Soldiers/2.png'), url('../images/Soldiers/3.png'), url('../images/Soldiers/1.png'), url('../images/Sprites_2/8.png') ;
+  background-image: url('../images/Soldiers/1.png'), url('../images/Soldiers/2.png'), url('../images/Soldiers/3.png'),url('../images/Soldiers/1.png'), url('../images/Soldiers/2.png'), url('../images/Soldiers/3.png'),url('../images/Soldiers/1.png'), url('../images/Soldiers/2.png'), url('../images/Soldiers/3.png'),url('../images/Soldiers/1.png'), url('../images/Soldiers/2.png'), url('../images/Soldiers/3.png'),url('../images/Soldiers/1.png'), url('../images/Sprites_2/8.png') ;
   background-repeat: no-repeat;
-  background-size: 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 400px ;
-  background-position: 0px 0px, 100px 0px, 200px 0px, 300px 0px, 400px 0px, 500px 0px, 600px 0px, 700px 0px, 800px 0px, 900px 0px, 1000px 0px, 1100px 0px, 1200px 0px, 1300px 0px, 1400px 0px, 1500px 0px, 1550px 0px ;
+  background-size: 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px, 400px ;
+  background-position: 0px 0px, 100px 0px, 200px 0px, 300px 0px, 400px 0px, 500px 0px, 600px 0px, 700px 0px, 800px 0px, 900px 0px, 1000px 0px, 1100px 0px, 1200px 0px, 1350px 0px ;
   text-shadow: none;
   color: #d54d7b; 
   font-size: 138px;
@@ -75,7 +75,7 @@ nav li:hover {
   width: 1200px;
   height: 500px;
   border: 20px solid darkgreen;
-  margin-left: 400px;
+  margin-left: 225px;
   margin-top: 0px;
   padding: 0px;
   Background-Image: url('../images/InnerBG/2.jpg');
@@ -213,6 +213,7 @@ nav li:hover {
 
 .selectUser {
   font-size: 50px; 
+  font-weight: bolder;
   color: rgb(202, 78, 103);
   text-align: center;
   padding-top: 20px;
@@ -220,15 +221,15 @@ nav li:hover {
   font-family: 'Rouge Script', cursive; 
   font-weight: bolder;
   letter-spacing: -1px;
-  -webkit-text-stroke: .5px rgb(59, 77, 241);
+  -webkit-text-stroke: .5px rgb(48, 48, 48);
   margin-bottom: 5px;
 }
 
 .buttonUsers {
   display:list-item	;
-  font-size: 25px;
-  color: darkcyan;
-  -webkit-text-stroke: 1px white;
+  font-size: 30px;
+  color: crimson;
+  -webkit-text-stroke: 1px black;
   font-family: 'Rouge Script', cursive; 
   font-weight: bolder;
   letter-spacing: 4px;
@@ -249,8 +250,8 @@ nav li:hover {
 .buttonHeros {
   display:block	;
   font-size: 25px;
-  color: darkcyan;
-  -webkit-text-stroke: 1px white;
+  color: crimson;
+  -webkit-text-stroke: 1px black;
   font-family: 'Rouge Script', cursive; 
   font-weight: bolder;
   letter-spacing: 2px;
@@ -274,13 +275,13 @@ nav li:hover {
   margin-top: 80px;
   font-size: 30px;
   display: none;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .signUpForm button {
   font-size: 25px;
-  color: darkcyan;
-  -webkit-text-stroke: 1px white;
+  color: rgb(0, 0, 0);
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
   font-family: 'Rouge Script', cursive; 
   font-weight: bold;
 }
@@ -302,7 +303,7 @@ nav li:hover {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000; 
   width: 1200px;
   border: 20px solid darkgreen;
-  margin-left: 400px;
+  margin-left: 225px;
   margin-top: 0px;
   padding: 0px;
   Background-Image: url('../images/InnerBG/4.jpg');
