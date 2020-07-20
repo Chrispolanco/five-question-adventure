@@ -69,9 +69,13 @@ class Users {
                 users.forEach(user => this.statUsers.push(new User(user)))
             })
             .then(() => {
+                this.statUsers.sort((a, b) => (a.name > b.name) ? 1 : -1)
+            })
+            .then(() => {
                 this.statRenderUsers()
             })
     };
+
 
     statRenderUsers() {
  
@@ -81,7 +85,6 @@ class Users {
         while (this.statBox.firstChild) {
             this.statBox.removeChild(this.statBox.firstChild)
         }; 
-
 
         this.statUsers.forEach(user => {
             const statUserInfo = document.createElement('p');
@@ -128,7 +131,15 @@ class Users {
             statUserInfo.appendChild(statWonAdventure4);
             })
 
+        
+            this.sortButton = document.createElement('Button');
+            this.sortButton.className = "buttons"
+            this.sortButton.innerText = "Sort by Name"
+            this.statBox.appendChild(this.sortButton); 
+
+            this.sortButton.addEventListener('click'. this.sortUser.bind(this));     
     };
+
 
     welcome() {
 
