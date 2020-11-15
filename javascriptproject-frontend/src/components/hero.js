@@ -6,7 +6,4 @@ class Hero {
         this.age = heroJson.age;  
         this.health = heroJson.health; 
     }
-
-
-
 }
