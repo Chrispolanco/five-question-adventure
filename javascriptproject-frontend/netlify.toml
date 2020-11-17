@@ -1,6 +1,6 @@
 [build]
-  command = "npm run build"
-  publish="javascriptproject-frontend/build"
+  command = "npm run"
+  publish="javascriptproject-frontend"
   base = "javascriptproject-frontend"
 [[redirects]]
   from = "/*"
