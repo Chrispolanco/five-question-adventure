@@ -1,8 +1,0 @@
-[build]
-  command = "npm run"
-  publish="javascriptproject-frontend"
-  base = "javascriptproject-frontend"
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
