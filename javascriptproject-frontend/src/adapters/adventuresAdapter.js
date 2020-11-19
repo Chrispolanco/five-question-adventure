@@ -1,7 +1,7 @@
 class AdventuresAdapter{
 
     constructor() {
-        this.adventureBaseURL = 'http://localhost:3000/adventures'
+        this.adventureBaseURL = 'https://five-question-adventure-api.herokuapp.com/adventures'
     }
 
     getAdventures() {
