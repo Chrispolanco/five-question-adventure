@@ -2,7 +2,7 @@
 class UsersAdapter {
 
     constructor() {
-        this.baseUrl = 'https://five-question-adventure-api.herokuapp.com/adventures/users'
+        this.baseUrl = 'https://five-question-adventure-api.herokuapp.com/users'
     }
 
     getUsers() {

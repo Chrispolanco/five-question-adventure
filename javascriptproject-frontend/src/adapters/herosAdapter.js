@@ -1,7 +1,7 @@
 class HerosAdapter{
 
     constructor() {
-        this.heroBaseURL = 'https://five-question-adventure-api.herokuapp.com/adventures/heros'
+        this.heroBaseURL = 'https://five-question-adventure-api.herokuapp.com/heros'
     }
 
     getHeros() {
